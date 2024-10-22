@@ -10,19 +10,19 @@ const NotFoundPage = () => {
         <div className="pt-bredwrap">
           <div className="container">
             <div className="ptboutr">
-              <h2 className="mr-h1"> {t("notfound.notfoundpage")}</h2>
+              <h2 className="mr-h1"> sdggd</h2>
               <ol className="breadcrumb">
                 <li>
                   <a aria-label="Home" href="/" className="fa fa-home" />
                 </li>
                 <li>
                   <a aria-label="" href="/">
-                    {t("header.home")}
+ewg
                   </a>
                 </li>
                 <li>
                   <a aria-label="" href="/">
-                    {t("notfound.notfoundpage")}
+dgf
                   </a>
                 </li>
               </ol>
@@ -32,14 +32,14 @@ const NotFoundPage = () => {
       </nav>
       <div className="not-found-container">
         <div>
-          <img
-            src="/404-error-page-not-found-600nw-1815888590.webp"
+          {/* <img
+            src="/assets/images/404.webp"
             alt=""
             className="not-found-img"
-          />
+          /> */}
         </div>
         <Link href="/" className="not-found-link">
-          {t("notfound.back-home-error")}
+fdx
         </Link>
       </div>
     </div>

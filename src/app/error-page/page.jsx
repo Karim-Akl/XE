@@ -16,19 +16,19 @@ const ErrorPage = () => {
           <div className="pt-bredwrap">
             <div className="container">
               <div className="ptboutr">
-                <h2 className="mr-h1">{t("notfound.ErrorPage")}</h2>
+                <h2 className="mr-h1">sfd</h2>
                 <ol className="breadcrumb">
                   <li>
                     <a aria-label="Home" href="/" className="fa fa-home" />
                   </li>
                   <li>
                     <a aria-label="" href="/">
-                      {t("header.home")}
+ssf
                     </a>
                   </li>
                   <li>
                     <a aria-label="" href="/">
-                      {t("notfound.ErrorPage")}
+sfd
                     </a>
                   </li>
                 </ol>
@@ -40,10 +40,10 @@ const ErrorPage = () => {
       <div className="error-container">
         <div className="error-content">
           <h1 className="error-title">OOPS!</h1>
-          <p className="error-message">{t("notfound.Error Page-1")}</p>
+          <p className="error-message">sfdfsd</p>
           {/* استخدام الدالة لتحديث الصفحة */}
           <a href="/" onClick={handleReload} className="error-link">
-            {t("notfound.back-home-error")}
+sdffsd
           </a>
         </div>
       </div>
