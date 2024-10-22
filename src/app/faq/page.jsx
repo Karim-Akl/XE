@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./faq.css";
 import Header from "@/components/layout/header/header";

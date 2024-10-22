@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./error-page.css"; // تأكد من إنشاء ملف CSS بنفس الاسم
 

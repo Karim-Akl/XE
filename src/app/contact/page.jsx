@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./contact.css";
 import Footer from "@/components/layout/footer/footer";
