@@ -1,9 +1,7 @@
 import React from "react";
 import "./error-page.css"; // تأكد من إنشاء ملف CSS بنفس الاسم
-import { useTranslation } from "react-i18next";
 
 const ErrorPage = () => {
-  const { t, i18n } = useTranslation();
 
   // دالة لإعادة تحميل الصفحة
   const handleReload = (e) => {

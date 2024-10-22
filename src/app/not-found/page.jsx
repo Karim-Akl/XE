@@ -1,11 +1,8 @@
-// src/components/NotFoundPage.js
 import React from "react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import Link from "next/link";
 import "./not-found.css"; // إذا كنت تريد استخدام CSS مخصص
 
 const NotFoundPage = () => {
-  const { t, i18n } = useTranslation();
 
   return (
     <div>
@@ -41,7 +38,7 @@ const NotFoundPage = () => {
             className="not-found-img"
           />
         </div>
-        <Link to="/" className="not-found-link">
+        <Link href="/" className="not-found-link">
           {t("notfound.back-home-error")}
         </Link>
       </div>
