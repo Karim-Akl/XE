@@ -1,7 +1,7 @@
 import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="w-full h-auto relative bottom-0 mt-16">
+    <footer className="w-full h-auto relative bottom-0 mt-24">
       <div className="footer-class relative h-auto flex items-center justify-center text-center w-full flex-col align-center gap-4">
         <div
           style={{ transform: "translateY(-35%)" }}

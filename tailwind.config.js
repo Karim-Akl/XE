@@ -13,6 +13,7 @@ module.exports = {
         background:'#c69d4d',
         textCont: '#654d3c',
         text: '#c69d4d',
+        text2: '#afa39a',
         bgIcon: '#c59c4c',
         iconHover: '#654d3c',
         smText: '#afa39a',

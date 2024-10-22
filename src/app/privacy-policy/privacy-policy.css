@@ -1,0 +1,41 @@
+section .text-bg-rols {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+  width: 90%;
+  margin-bottom: 10rem !important;
+  margin-top: 5rem !important;
+  
+}
+section .text-bg-rols p {
+  color: var(--textCont);
+  font-weight: 400;
+
+  font-size: large;
+}
+section .text-bg-rols span {
+  color: var(--textCont);
+  font-weight: bolder !important;
+
+  font-size: large;
+
+}
+section .text-bg-rols .tx {
+  flex-direction: column;
+}
+
+@media (width < 768px) {
+  section .bg h3 {
+    font-size: large;
+  }
+  section .bg span {
+    font-size: 10px;
+  }
+  section .text-bg-rols {
+    width: 95%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 5rem;
+    margin: auto;
+  }
+}

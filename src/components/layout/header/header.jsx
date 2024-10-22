@@ -4,7 +4,6 @@ import Link from "next/link";
 import "./header.css";
 const Header = () => {
   return (
-
     <header className="relative top-0 w-full flex justify-center align-content-center m-auto flex-col items-center md:flex-col">
       <nav className="nav flex justify-around w-full bg-secondary py-5 h-32 align-top relative">
         <div
@@ -26,15 +25,15 @@ const Header = () => {
           </div>
           <ul className="flex items-top gap-3">
             <li className="text-smText hover:text-text">
-              <Link href="/">الأسئلة الشائعة</Link>
+              <Link href="/faq">الأسئلة الشائعة</Link>
             </li>
             <li className="text-smText hover:text-text">/</li>
             <li className="text-smText hover:text-text">
-              <Link href="/">الشروط والأحكام</Link>
+              <Link href="/conditions">الشروط والأحكام</Link>
             </li>
             <li className="text-smText hover:text-text">/</li>
             <li className="text-smText hover:text-text">
-              <Link href="/">سياسة الخصوصية</Link>
+              <Link href="/privacy-policy">سياسة الخصوصية</Link>
             </li>
           </ul>
         </div>
@@ -45,15 +44,14 @@ const Header = () => {
         className="z-10 bg-white container absolute py-16 translate-y-20 rounded-xl h-40 flex items-center justify-between"
       >
         <div className="w-1/3">
-        <Link href="/">
-          <img
-            className="object-cover"
-            src="/assets/images/logo.webp"
-            alt="logo"
-            width={250}
-          />
-        
-        </Link>
+          <Link href="/">
+            <img
+              className="object-cover"
+              src="/assets/images/logo.webp"
+              alt="logo"
+              width={250}
+            />
+          </Link>
         </div>
         <div className="w-1/2 flex justify-evenly items-right text-right flex-col">
           <div className="lin-1 flex gap-8">
@@ -112,10 +110,10 @@ const Header = () => {
                 </ul>
               </li>
               <li className="text-textCont hover:text-text">
-              <Link href="/request-service"> طلب الخدمة</Link>
+                <Link href="/request-service"> طلب الخدمة</Link>
               </li>
               <li className="text-textCont hover:text-text">
-              <Link href="/contact">تواصل معنا</Link>
+                <Link href="/contact">تواصل معنا</Link>
               </li>
             </ul>
             <div className="flex gap-5 ">
