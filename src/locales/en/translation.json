@@ -1,0 +1,145 @@
+{
+  "header":{
+    "home":"HOME",
+    "categories":"Categories",
+    "aboutUs":"About Us",
+    "contactUs":"Contact Us",
+    "Brands":"ALL BRANDS",
+    "BrandFetch":"Brand Fetch",
+    "Categories":"Categories Fetch",
+    "allCars":"All Cars",
+    "SearchForm":"Search Your Dream Car"
+  },
+  "footer": {
+    "altText": "MONZA Rent a Car",
+    "title": "MONZA Rent a Car",
+    "moneyLeek": "PrimedIos",
+    "description": "MONZA Luxury Car Rental Dubai professional Sports Car Rental Service. Customer well-being, satisfaction, and choice are our extreme priority.",
+    "usefulLinks": {
+      "title": "Useful Links",
+      "items": [
+        "Home",
+        "About Us",
+        "Categories",
+        "All Brands",
+        "Contact Us"
+      ]
+    },
+    "categories": {
+      "title": "Categories",
+      "items": [
+        "Sport Car",
+        "SUV Car",
+        "7- seater",
+        "Pickup Car",
+        "Sports Car"
+      ]
+    },
+    "ourServices": {
+      "title": "All Brands",
+      "items": [
+        "BMW Car",
+        "Ferrari Car",
+        "Jeep   Car",
+        "GMC    Car"
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "location": "Dubai United Arab Emirates.",
+      "phone": "+971 56 668 1333",
+      "whatsapp": "+971 56 668 1333",
+      "email": "info@monza.ae"
+    },
+    "followUs": "Follow Us",
+    "allRightsReserved": "All Rights Reserved.",
+    "designDevelopedBy": "Design & Developed By"
+  },
+
+"about": {
+    "aboutUs": "About Us",
+    "home": "Home",
+    "whyChooseUsTitle": "Why Choose Us",
+    "whyChooseUsText": "We offer a wide range of car brands to choose from at competitive rates. MONZA Rent a Car provides sports cars, luxury cars, and supercars for rent. We are proud to offer a fleet of premium cars for rent today, all available for a period that suits your needs.",
+    "whoWeAreTitle": "Who We Are?",
+    "whoWeAreText": "Since its launch in 1999, the agency consisting of two leading car rental services (MONZA & VIP) has been focusing on core principles such as excellent value for money and strong customer support. The Dubai-based company has seen tremendous growth across the Emirates and has managed to become a leader in the field due to its determination and hardworking personnel.",
+    "ourVisionTitle": "Our Vision",
+    "ourVisionText": "Our vision is to be the premier and preferred rental company in Dubai and to offer service beyond customer satisfaction and demand. We want to help our clients maximize customer lifetime value and increase their competitive advantage by driving productivity and efficiency while delivering measurable results. We will lead our company by defining service excellence and building unmatched customer loyalty and satisfaction.",
+    "ourMissionTitle": "Our Mission",
+    "missionList": [
+      "We live our mission every day by putting customer satisfaction above all else.",
+      "We embody the MONZA spirit with knowledge, care, and a passion for excellence.",
+      "We aim to provide an unmatched tailor-made service and establish a completely trustful and engaging relationship with our clients.",
+      "We will ensure a stress-free car rental experience by providing superior services that cater to our customers' individual needs.",
+      "We will conduct business with unwavering high standards of honesty, trust, professionalism, and ethical behavior."
+    ]
+  }
+  ,
+  "contact": {
+    "getInTouch": "Contact Us",
+    "home": "Home",
+    "contactUs": "Contact Us",
+    "location": "Dubai,United Arab Emirates.",
+    "phoneNumber": "+123456789",
+    "whatsapp": "+123456789",
+    "email": "info@monza.ae",
+    "followUs": "Follow Us",
+    "fullNamePlaceholder": "Full Name",
+    "fullNumberPlaceholder": " Phone Number",
+    "emailPlaceholder": "Email address",
+    "messagePlaceholder": "Message",
+    "submitButton": "Submit",
+    "submittingButton": "  Submitting ... ",
+    "successMessage": "Your message has been sent successfully"
+},
+"slider": {
+  "heading": "MONZA",
+  "subheading": "CAR RENTAL DUBAI",
+  "buttonText": " See All Cars "
+},
+"fasterCar": {
+    "title": "MONZA Rent A Car",
+    "subtitle": "A Car Rental Company in Dubai You Can Trust",
+    "description": "Sportscars, supercars, luxury cars, and SUVs, MONZA Rent a Car has them all for all requirements. Get your favorite fast car rental service in Dubai with delivery available at your doorstep. We provide the best Lamborghini Huracan rental in Dubai, Ferrari 488 Spider, Mercedes G63 rental, Nissan Patrol rental, Cadillac Escalade rental, Audi R8, Lamborghini Urus, and many more. Hire your favorite exotic sportscar or SUV at amazing discounted prices any day of the week.",
+    "supercarTitle": "Making Supercar Dreams Come True for Over a Decade",
+    "supercarDescription": "Supercars and dream cars for many of us. Also, these are expensive and too-demanding objects of desire that are not ideal for every garage. However, if you want to enjoy your dream car for a shorter period of time, MONZA Rent a Car has the perfect solutions for you. We make supercar, sportscar, luxury cars and exotic SUV dreams come true with our fast car rental in Dubai service. We have the widest range of world-leading car brands and models available with your desired rental plans.",
+    "premiumTitle": "Our Premium Services ___",
+    "premiumDescription": "At MONZA Rent a Car, we specialize in fulfilling all rent a car in Dubai requirements. Our clients can call us or request their car rental in Dubai service any day of the week. We will ensure same-day delivery for private and business rent a car requirements. Also, chauffeur service is available in the city for desert safari, business, and family road trip preferences. Please call us today and book your fast car rental service for any day of the week with same-day delivery or pickup.",
+    "privateCarRental": "Private Car Rental in Dubai",
+    "privateCarDescription": "We offer private car hire in Dubai service for all requirements. Hire a luxury car, sports car or SUV any day of the week to make your trips across Dubai and the rest of the UAE more exciting and convenient. Call us today to book your car rental.",
+    "businessCarRental": "Rent a Car in Dubai for Business",
+    "businessCarDescription": "MONZA Rent a Car offers business car rental service in Dubai, any day of the week, all year. Get the best Rolls Royce hire, Mercedes S500 rental or any other business rent a car in Dubai service with a chauffeur. Call us now to find out more.",
+    "desertSafari": "Desert Safari Service",
+    "desertSafariDescription": "MONZA Rent a Car offers the best desert safari service in Dubai for all requirements. Hire the best powerful SUVs including Range Rover rental, G63 hire, Nissan Patrol rental, Cadillac Escalade hire and more for exciting desert safaris any time.",
+    "weddingEventRental": "Wedding and Event Car Rental",
+    "weddingEventDescription": "MONZA Rent a Car offers the best wedding and event car rental service in Dubai for all requirements. Hire the best luxury and powerful SUVs for your special celebrations any time and any day of the week.",
+    "sportscarRentalTitle": "Sportscar Rental in Dubai",
+    "sportscarRentalDescription": "Get your dream sports car rental in Dubai delivered to your desired location on any day. We have the world’s finest sports cars available including Ferrari, Lamborghini, Porsche, Dodge, Ford Mustang, and many more available.",
+    "suvRentalTitle": "SUV Rental in Dubai",
+    "suvRentalDescription": "Experience luxury and power with our SUV rentals in Dubai. Choose from top models like Range Rover, G63, and Nissan Patrol for a comfortable and thrilling ride across the city and desert.",
+    "luxuryRentalTitle": "Luxury Car Rental in Dubai",
+    "luxuryRentalDescription": "Indulge in luxury with our premium car rentals in Dubai. Whether it's a Rolls Royce, Bentley, or a top-of-the-line Mercedes, our collection offers unmatched elegance and style for your special occasions."
+  },
+  "offers":{
+    "car-rental-offers":"Car rental offers",
+    "related-cars":"Related Cars" 
+  },
+  "notfound":{
+    "notfoundCategory-1": "No cars found for this Category",
+    "notfoundCategory-2": "Please try again with a different category term or check back later.",
+    "notfoundBrand": "No cars found for this Brand",
+    "notfoundpage": "No cars found",
+    "notfoundsearch-1": "No results found for ",
+    "notfoundsearch-2": "Please try again with a different search term or check back later.",
+    "back-home-error":"Go Back to Home",
+    "Error Page-1":"There seems to be a problem with your connection. Please check your internet connection and try again.",
+    "ErrorPage":"Error Page"
+  },
+  "blog":{
+    "BlogNavBar":"blog",
+    "BlogNavBar-1":"Blog Details"
+  }
+  ,
+  "funsh-1":" Offer Expired",
+  "funsh-2":"  Sorry, the offer has expired   ."
+}

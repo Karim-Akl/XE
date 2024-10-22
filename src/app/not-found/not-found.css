@@ -1,0 +1,35 @@
+/* src/components/NotFoundPage.css */
+.not-found-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+.not-found-title {
+  font-size: 100px;
+  margin: 0;
+  color: #343a40;
+}
+
+.not-found-message {
+  font-size: 24px;
+  color: #6c757d;
+}
+
+.not-found-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #007bff;
+  text-decoration: none;
+}
+.not-found-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .not-found-img{
+    width: 100%;
+  }
+
+}
+

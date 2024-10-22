@@ -1,0 +1,39 @@
+.footer-class{
+  background-image:url(../../../../public/assets/images/bg3-1.webp) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  padding: 5rem 0;
+}
+.image-class {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+h2 {
+  font-size: 2.5vw; /* يتغير مع عرض الشاشة */
+}
+button {
+  max-width: 200px;
+  padding: 1rem 2rem;
+}
+
+/* إعداد التأثير على العنصر عند التمرير */
+footer .scale {
+  transition: transform 0.3s ease-in-out; /* انتقال تدريجي للـ transform */
+}
+
+footer  .scale:hover {
+  transform: scale(1.05); /* تكبير حجم العنصر بنسبة 5% */
+}

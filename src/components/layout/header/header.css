@@ -1,0 +1,48 @@
+.icon-1{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--bgIcon);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.icon-1:hover{
+  background: var(--bgIcon);
+}
+.devi{
+  width: 95%;
+  border-bottom:1px solid var(--bgIcon);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.relative {
+  position: relative; /* التأكد من أن العنصر له موضع */
+}
+
+/* إظهار القائمة عند تمرير الفأرة */
+.ul-class:hover .dropdown,
+.dropdown:hover {
+  display: block !important; /* عرض القائمة */
+}
+
+.dropdown {
+  display: none; /* إخفاء القائمة بشكل افتراضي */
+  position: absolute;
+  width: 200px; /* عرض القائمة */
+  transition: 0.7s;
+  background-color: #fff; /* خلفية بيضاء */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل */
+  padding: 10px; /* حشوة للقائمة */
+  z-index: 1000; /* ز-index عالٍ للتأكد من أنها فوق العناصر الأخرى */
+}
+@media screen and (width < 1068px) {
+  header.relative {  
+      display: none;
+  }
+}

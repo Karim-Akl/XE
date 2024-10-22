@@ -1,0 +1,266 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 50px;
+  margin-top: 70px;
+
+}
+.top-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  gap: 10px;
+  background-color: var(--icon-hover);
+  background: linear-gradient(
+      90deg,
+      var(--icon-hover) 40%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    url(https://moneyleek.online/wp-content/themes/1/seosight/images/bg-9.png);
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  span {
+    font-size: 20px;
+    &:hover {
+      color: aliceblue;
+    }
+  }
+  .contact-span {
+    font-size: 20px;
+    font-weight: 500;
+    gap: 30px;
+    display: flex;
+  }
+  .btn-prev {
+    width: 40px !important;
+    height: 40px !important;
+    &:hover {
+      color: aliceblue;
+    }
+  }
+}
+
+.bottom-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 50px; */
+  text-align: right;
+  width: 60% !important;
+
+  gap: 20px;
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--icon-hover);
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+.contact-info {
+  background-color: var(--primary);
+  box-shadow: 1px 0px 10px 2px rgb(172 172 172 / 50%);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 80px 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around !important;
+  color: var(--white) !important;
+
+  .contact-mail {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+    &:hover {
+      color: var(--text);
+    }
+  }
+  .contact-flag {
+    display: flex;
+    transition: all 0.3s ease;
+    gap: 20px;
+    &:hover {
+      color: var(--text);
+    }
+  }
+  .contact-phone {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+
+  }
+  .flag-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .phone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & a:hover {
+      color: var(--text);
+    }
+  }
+}
+
+.contact-form {
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
+  text-align: right;
+  width: 100% !important;
+  gap: 20px !important;
+  display: flex;
+  margin: auto;
+  position: relative;
+  .form-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--icon-hover);
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+.form-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  position: relative;
+  .flex {
+    width: 100% !important;
+  }
+  input,
+  textarea {
+    padding: 19px 40px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #595959;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    background-color: #edf2f6;
+    width: 100% !important;
+    border: 1px solid #888 !important;
+  }
+  form .flex {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--icon-hover) !important;
+    box-shadow: 17px 0 60px #d3dcdc;
+    background-color: #fff;
+    border: var(--icon-hover) !important;
+  }
+  .but-form {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    button {
+      background-color: var(--text);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      transition: all 0.3s ease;
+      text-align: center;
+      border-color: transparent;
+      &:hover{
+        background-color:var(--primary);
+
+      }
+      &:hover span{
+        color: var(--white) !important;
+      }
+    }
+    span {
+      display: inline;
+      vertical-align: middle;
+      
+  }
+  }
+}
+
+
+.semicircle {
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 95px;
+  width: 11px;
+  height: 35px;
+  overflow: hidden;
+}
+.semicircle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+}
+.btn-hover-shadow:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  left: 0;
+  top: 0;
+  position: absolute;
+  transition: all .3s ease;
+}
+
+
+.contact-section footer {
+  margin-top: 10rem;
+}
+@media (max-width: 868px) {
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    text-align: right;
+    align-items: self-start;
+    justify-content: center;
+    padding: 50px;
+  }
+  .bottom-contact{
+    padding: 0px !important;
+    width: 90% !important;
+  }
+}
