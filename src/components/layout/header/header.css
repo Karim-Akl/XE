@@ -1,4 +1,4 @@
-.icon-1{
+.icon-1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -8,14 +8,14 @@
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.icon-1:hover{
+.icon-1:hover {
   background: var(--bgIcon);
 }
-.devi{
+.devi {
   width: 95%;
-  border-bottom:1px solid var(--bgIcon);
+  border-bottom: 1px solid var(--bgIcon);
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -41,8 +41,240 @@
   padding: 10px; /* حشوة للقائمة */
   z-index: 1000; /* ز-index عالٍ للتأكد من أنها فوق العناصر الأخرى */
 }
+.Menuo {
+  display: none;
+}
+.icon-menu {
+  display: none;
+  font-size: xx-large;
+  position: absolute;
+  right: 10px;
+  background-color: var(--bgIcon);
+  border-radius: 20%;
+  padding: 5px;
+  height: 30px;
+  margin: auto;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30px;
+  border: none !important;
+}
+.icon-menu svg {
+  margin: auto;
+  margin-bottom: 4px;
+}
+.icon-menu:active {
+  scale: 0.9;
+}
+.icon-menu:active {
+  scale: 0.9;
+}
+
+/* ===========================
+ table of contents
+==============================
+1. Header Design
+2. Button & icon
+3- Modal == pop up
+4- Responsive Design (media query)*/
+
+/* ========================
+    1. Header Design
+=========================== */
+
+ul.modal {
+  gap: 16px;
+  background-image: linear-gradient(
+      90deg,
+      rgba(198, 157, 78, 0.85),
+      rgba(198, 157, 78, 0.85)
+    ),
+    url(../../../../public/assets/images/bg3-1.webp);
+  max-width: 400px;
+}
+
+ul.modal li a {
+  color: var(--title) !important;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+  transition: 0.5s;
+}
+
+ul.modal li a:hover {
+  color: var(--white) !important;
+  opacity: 1;
+  background-color: var(--icon-hover);
+  box-shadow: 1px -1111px 100px var(--icon-hover);
+}
+
+button {
+  font-size: 1.2rem;
+}
+
+button.men {
+  display: none;
+  background-color: rgb(244 244 245);
+}
+
+/* ========================
+    2. Button & icon
+=========================== */
+.men,
+button.mode {
+  background-color: red;
+  height: 2rem;
+  width: 2.4rem;
+  border-radius: 30px;
+  justify-content: center;
+  text-align: center;
+  color: red;
+  transition: 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--subtitle);
+  transform: translateX(5px);
+  box-shadow: 1px 1px 40px #2323242a;
+}
+
+.icon-chevron-down {
+  font-size: 12px;
+}
+
+.icon-chevron-down:hover,
+button.mode:hover {
+  color: var(--title);
+  /* border: 1px solid var(--border); */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon-x {
+  font-size: 1rem;
+  color: red !important;
+  transition: 0.3s;
+}
+
+.icon-x:hover {
+  font-size: 1.2rem;
+  color: crimson;
+  rotate: 180deg;
+}
+
+/* ========================
+    3- Modal == pop up
+=========================== */
+.fixed {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  background-color: rgba(40, 40, 48, 0.91);
+
+  /* filter: blur(8px); */
+  backdrop-filter: blur(4px);
+}
+
+@keyframes mymove {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Optional: Start fully transparent */
+  }
+
+  60% {
+    transform: translateX(10%); /* Move slightly past the final position */
+    opacity: 1; /* Optional: Fade in */
+  }
+
+  100% {
+    transform: translateX(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+/* To animate when the element closes */
+@keyframes slideToRight {
+  0% {
+    transform: translateX(0); /* Start at the final position */
+    opacity: 1; /* Fully visible */
+  }
+
+  100% {
+    transform: translateX(100%); /* Move off-screen to the right */
+    opacity: 0; /* Optional: Fade out */
+  }
+}
+
+.element-close {
+  animation: slideToRight 0.77s 1 ease-in-out forwards;
+}
+
+header .fixed ul.modal {
+  animation: mymove 0.77s 1;
+  width: 75%;
+  /* margin-left: auto; */
+  margin-right: auto;
+  /* margin-top: 2rem; */
+  /* border-radius: 1rem; */
+  padding: 1rem 2rem;
+  background-color: var(--secondary);
+  height: 100%;
+}
+
+header .fixed ul.modal li {
+  padding-top: 4rem;
+}
+
+header .fixed ul.modal li:first-child {
+  text-align: right;
+  border: none;
+  padding-bottom: 0;
+  padding-top: 0.2rem;
+  margin-bottom: -1rem;
+}
+
+header .fixed ul.modal li:last-child {
+  border: none;
+}
+
+header .fixed ul li a {
+  font-size: 1rem;
+  color: black;
+}
+ul.modal button {
+  border: none !important;
+}
+ul.modal button:hover {
+  font-size: xx-large;
+}
+ul.modal button {
+  font-size: x-large;
+  padding: 0px;
+}
+
+header .men {
+  flex-direction: row-reverse !important;
+  display: block !important;
+}
 @media screen and (width < 1068px) {
-  header.relative {  
-      display: none;
+  .hedtop {
+    display: none;
+  }
+  .link-mail,
+  header section .link-route ul {
+    display: none !important;
+  }
+  .Menuo,
+  .icon-menu {
+    display: flex !important;
   }
 }

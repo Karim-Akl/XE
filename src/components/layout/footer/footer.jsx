@@ -4,10 +4,10 @@ const Footer = () => {
     <footer className="w-full h-auto relative bottom-0 mt-24">
       <div className="footer-class relative h-auto flex items-center justify-center text-center w-full flex-col align-center gap-4">
         <div
-          style={{ transform: "translateY(-35%)" }}
-          className="scale top-0 flex z-50 rounded-xl overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-4 bg-background md:flex-row md:w-[80%]  w-11/12"
+          style={{ transform: "translateY(-35%)" }} 
+          className="scale top-0 flex z-20 rounded-xl overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-1 bg-background md:flex-row md:w-[80%]  w-11/12 "
         >
-          <div className="absolute right-0 md:relative md:w-1/3 w-full opacity-0.5 z-0 h-[100%]">
+          <div className="absolute right-0 md:relative md:w-1/3  w-full opacity-0.5 z-0 h-[100%] img-class-footer">
             <img
               className="object-cover"
               src="/assets/images/bg4-1.webp"
@@ -15,18 +15,18 @@ const Footer = () => {
               style={{ width: "100%", height: "100%" }}
             />
           </div>
-          <div className="md:w-1/3 flex flex-col gap-4 text-right justify-items-end z-10 w-full">
+          <div className="md:w-1/3 flex flex-col gap-4   ">
             <h2 className="textCont text-3xl font-bold text-textCont">
               هل لديك سؤال او استفسار؟
             </h2>
-            <p className="textCont text-xl text-white">
+            <p className=" text-xl text-white">
               تواصل مع خدمة العملاء الان
             </p>
           </div>
-          <div className="md:w-1/3 z-10 w-full">
+          <div className="md:w-1/3 z-10 w-full mb-4">
             <button
               style={{ transition: "0.2s" }}
-              className="bg-white text-textCont px-6 py-4 rounded-xl hover:bg-iconHover hover:text-text font-bold"
+              className="bg-white text-textCont rounded-xl hover:bg-iconHover hover:text-text font-bold"
             >
               اتصل بنا
             </button>
