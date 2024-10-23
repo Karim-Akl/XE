@@ -218,22 +218,36 @@ const Header = () => {
                   <Link href="/">الصفحة الرئيسية </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/">عن الشركة </Link>
+                  <Link href="/about">عن الشركة </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/">خدماتنا ^</Link>
+                  <Link href="/services">خدماتنا ^</Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/about">طلب الخدمة</Link>
+                  <Link href="/request-service">طلب الخدمة</Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
                   <Link href="/contact">تواصل معنا</Link>
                 </li>
                 <div className="flex justify-center items-baseline w-full m-auto static mb-10 ">
                   <ul className="flex gap-5  items-baseline absolute bottom-0">
-                    <li className="hover:text-white">الأسئلة الشائعة | </li>
-                    <li className="hover:text-white">الشروط والأحكام | </li>
-                    <li className="hover:text-white">سياسة الخصوصية </li>
+                    <li className="hover:text-white" >
+                      <Link href="/faq">
+                      الأسئلة الشائعة |
+                      </Link>
+                      
+                       </li>
+                    <li className="hover:text-white">
+                      <Link href="/conditions">
+                      الشروط والأحكام |
+                      </Link>
+                     </li>
+
+                    <li className="hover:text-white">
+                      <Link href="/privacy-policy">
+                      سياسة الخصوصية
+                      </Link>
+                        </li>
                   </ul>
                 </div>
               </ul>
