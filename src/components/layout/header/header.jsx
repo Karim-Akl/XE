@@ -42,9 +42,7 @@ const Header = () => {
           </div>
         </nav>
 
-        <div
-          className="z-10 bg-white  md:w-[85%]  sm:w-[98%] sm:mb-5 absolute p-2 translate-y-20 rounded-xl h-auto flex items-center justify-between"
-        >
+        <div className="z-10 bg-white  md:w-[85%]  sm:w-[98%] sm:mb-5 absolute p-2 translate-y-20 rounded-xl h-auto flex items-center justify-between">
           <div className="w-1/3">
             <Link href="/">
               <img
@@ -103,17 +101,17 @@ const Header = () => {
                   {/* القائمة المنسدلة */}
                   <ul className="dropdown">
                     <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/service1" className="">
+                      <Link href="/services/7" className="">
                         خدمة 1
                       </Link>
                     </li>
                     <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/service2" className="">
+                      <Link href="/services/8" className="">
                         خدمة 2
                       </Link>
                     </li>
                     <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/service3" className="">
+                      <Link href="/services/9" className="">
                         خدمة 3
                       </Link>
                     </li>
@@ -231,23 +229,16 @@ const Header = () => {
                 </li>
                 <div className="flex justify-center items-baseline w-full m-auto static mb-10 ">
                   <ul className="flex gap-5  items-baseline absolute bottom-0">
-                    <li className="hover:text-white" >
-                      <Link href="/faq">
-                      الأسئلة الشائعة |
-                      </Link>
-                      
-                       </li>
                     <li className="hover:text-white">
-                      <Link href="/conditions">
-                      الشروط والأحكام |
-                      </Link>
-                     </li>
+                      <Link href="/faq">الأسئلة الشائعة |</Link>
+                    </li>
+                    <li className="hover:text-white">
+                      <Link href="/conditions">الشروط والأحكام |</Link>
+                    </li>
 
                     <li className="hover:text-white">
-                      <Link href="/privacy-policy">
-                      سياسة الخصوصية
-                      </Link>
-                        </li>
+                      <Link href="/privacy-policy">سياسة الخصوصية</Link>
+                    </li>
                   </ul>
                 </div>
               </ul>
