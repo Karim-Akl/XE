@@ -14,7 +14,7 @@ const RequestService = () => {
   return (
     <div>
       <section className="order-section">
-        <Header />
+
         <div className="contact">
           {/* <div className="top-contact">
           <h2>تواصل معانا</h2>
@@ -131,7 +131,7 @@ const RequestService = () => {
             </div>
           </div>
         </div>
-        <Footer />
+
       </section>
     </div>
   );

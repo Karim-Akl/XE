@@ -7,7 +7,7 @@ import Collabse from "@/components/collabse-list/collabse";
 const OrderNow = () => {
   return (
     <div className="">
-      <Header />
+
       <div className="order flex">
         <div className="container order-bg relative">
           <div className="order-left flex flex-col gap-7 relative md:justify-start  justify-center" >
@@ -26,7 +26,7 @@ const OrderNow = () => {
                 إكسي الخليج، من الإجراءات والجنسيات إلى ضمانات الجودة والرضا.
               </p>
             </div>
-            <div>
+            <div className="w-full">
               <Collabse />
             </div>
           </div>
@@ -74,7 +74,7 @@ const OrderNow = () => {
           </div>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

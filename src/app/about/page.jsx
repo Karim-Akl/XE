@@ -1,12 +1,14 @@
-"use client";
-import React from 'react';
-import './about.css';
-const About = () => {
+import React from "react";
+import SubAbout from "@/components/sub-about/sub-about";
+import SupService from "@/components/sub-service/sub-service";
+import WhyChooseUs from "@/components/why-choose-us/why-choose-us";
+export default function AboutUs() {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <section className="container mx-auto">
+      <SubAbout />
+      <SupService />
+      <WhyChooseUs/>
+    </section>
+
   );
 }
-
-export default About;

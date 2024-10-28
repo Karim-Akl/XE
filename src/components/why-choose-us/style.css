@@ -1,0 +1,15 @@
+.box-2{
+background-color: #ffffff;
+border-radius: 5px;
+padding: 2px 10px 10px;
+
+box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.15);}
+
+
+@media screen and (min-width: 768px) {  
+
+.box-2{
+margin-right: -140px;
+padding: 30px 50px 50px;
+}
+}

@@ -6,7 +6,7 @@ import "../privacy-policy/privacy-policy.css";
 const Page = () => {
   return (
     <div>
-      <Header />
+
       <section className="container">
         <div
           className="text-bg-rols"
@@ -135,7 +135,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <Footer />
+
     </div>
   );
 };

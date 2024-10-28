@@ -6,7 +6,7 @@ import "./privacy-policy.css";
 const Page = () => {
   return (
     <div>
-      <Header />
+
       <section className="container">
         <div className="text-bg-rols" style={{ flexDirection: "column",display: "flex", gap: "3rem" }}>
           <div
@@ -99,7 +99,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <Footer />
+
     </div>
   );
 };

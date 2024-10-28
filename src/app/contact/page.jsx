@@ -6,7 +6,7 @@ import Header from "@/components/layout/header/header";
 const Contact = () => {
   return (
     <section className="contact-section">
-      <Header />
+
       <div className="contact">
         {/* <div className="top-contact">
           <h2>تواصل معانا</h2>
@@ -124,7 +124,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+
     </section>
   );
 };
