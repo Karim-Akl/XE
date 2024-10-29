@@ -21,7 +21,7 @@ const SubAbout = () => {
       {/* Text and Icons Section */}
       <div className="w-full md:w-1/2 text-right">
         <h2 className="text-3xl font-bold text-gray-700 mb-4 ">من نحن؟</h2>
-        <p className="text-text leading-relaxed mb-6 w-[80%]">
+        <p className="text-text leading-relaxed mb-6 md:w-[80%] w-[100%] ">
           مرحبًا بكم في شركة إكسي للاستقدام، رائدة في مجال توفير خدمات الاستقدام
           الموثوقة والمتميزة في المملكة العربية السعودية. منذ تأسيسنا في عام
           2016، نلتزم بجعل عملية الاستقدام أسهل وأكثر أمانًا لعملائنا، مع

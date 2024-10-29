@@ -96,7 +96,7 @@ ul.modal {
   max-width: 400px;
 }
 
-ul.modal li a {
+ul.modal .lk {
   color: var(--title) !important;
   font-size: 0.8rem;
   border-radius: 10px;
@@ -105,14 +105,23 @@ ul.modal li a {
   align-items: center;
   text-align: center;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 900;
   width: 200px;
   margin: auto;
-  padding: 20px;
+  padding: 20px !important;
   transition: 0.5s;
 }
-
-ul.modal li a:hover {
+ul .botm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+ul.modal li .lk:hover {
   color: var(--white) !important;
   opacity: 1;
   background-color: var(--icon-hover);
@@ -231,7 +240,7 @@ header .fixed ul.modal {
 }
 
 header .fixed ul.modal li {
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
 }
 
 header .fixed ul.modal li:first-child {
@@ -239,7 +248,7 @@ header .fixed ul.modal li:first-child {
   border: none;
   padding-bottom: 0;
   padding-top: 0.2rem;
-  margin-bottom: -1rem;
+  /* margin-bottom: -1rem; */
 }
 
 header .fixed ul.modal li:last-child {

@@ -1,0 +1,14 @@
+
+.bn{
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.img-bg-2{
+  display: none ;
+}
+.group:hover .img-bg-2{
+  display: block !important;
+}
+.group:hover .img-bg-1{
+  display: none !important;
+}

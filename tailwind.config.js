@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom': '0px 10px 25px 0px rgba(0, 0, 0, 0.2)',
+      },
       colors: {
         primary: '#513d30',
         secondary: '#654d3c',

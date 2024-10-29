@@ -73,20 +73,24 @@ const Page = ({ params }) => {
               <div className=" gap-5 mt-4 grid grid-cols-1 md:grid-cols-2">
                 {/* يمكنك تكرار هذه القطع لعرض المعلومات المختلفة */}
                 <ServiceFeature
-                  title="جودة مضمونة"
-                  description="عمالة مدربة من دول مختارة بعناية لتوفير أعلى مستويات الجودة"
+                  title={Data.features?.[0].title}
+                  key={Data.features?.id}
+                  description={Data.features?.[0].description}
                 />
                 <ServiceFeature
-                  title="جودة مضمونة"
-                  description="عمالة مدربة من دول مختارة بعناية لتوفير أعلى مستويات الجودة"
+                  title={Data.features?.[1].title}
+                  key={Data.features?.id}
+                  description={Data.features?.[1].description}
                 />
                 <ServiceFeature
-                  title="جودة مضمونة"
-                  description="عمالة مدربة من دول مختارة بعناية لتوفير أعلى مستويات الجودة"
+                  title={Data.features?.[2].title}
+                  key={Data.features?.id}
+                  description={Data.features?.[2].description}
                 />
                 <ServiceFeature
-                  title="جودة مضمونة"
-                  description="عمالة مدربة من دول مختارة بعناية لتوفير أعلى مستويات الجودة"
+                  title={Data.features?.[3].title}
+                  key={Data.features?.id}
+                  description={Data.features?.[3].description}
                 />
               </div>
 
@@ -95,8 +99,8 @@ const Page = ({ params }) => {
                   type="submit"
                   className="relative bg-[var(--text)] text-white py-4 px-10 rounded-xl transition-all duration-300 ease-in-out cursor-pointer text-[15px] font-bold uppercase border-transparent hover:bg-[var(--primary)]"
                 >
-                  <span>إرسال</span>
-                  <span className="semicircle absolute top-1 left-[95px] w-[11px] h-[35px] overflow-hidden">
+                  <span>اطلب الان</span>
+                  <span className="semicircle absolute top-2 left-[120px] w-[11px] h-[35px] overflow-hidden">
                     <span className="block absolute w-[35px] h-[35px] border-2 border-white rounded-full"></span>
                   </span>
                 </button>

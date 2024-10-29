@@ -14,7 +14,6 @@ const RequestService = () => {
   return (
     <div>
       <section className="order-section">
-
         <div className="contact">
           {/* <div className="top-contact">
           <h2>تواصل معانا</h2>
@@ -103,14 +102,34 @@ const RequestService = () => {
                     <input type="text" placeholder="الجوال" />
                   </div>
                   <div className="flex">
-                    <Select 
+                    <Select
                       options={options}
-                      className=" select border-none"
+                      className="select border-none w-full sm:w-32 md:w-60 lg:w-80" // التحكم بالعرض حسب حجم الشاشة
                       classNamePrefix="select"
                       placeholder="نوع الخدمة *"
+                      styles={{
+                        control: (base, state) => ({
+                          ...base,
+                          fontSize: "0.875rem", // الحجم الافتراضي للنص
+                          width: "100%", // يجعل العرض ملائمًا للحاوية الخارجية
+                          "@media (max-width: 640px)": {
+                            // للشاشات الصغيرة
+                            fontSize: "0.75rem", // تصغير حجم النص
+                          },
+                        }),
+                        option: (base, state) => ({
+                          ...base,
+                          fontSize: "0.75rem", // تصغير حجم النص للخيارات
+                          padding: "4px 8px", // التحكم في المسافات الداخلية للخيارات
+                          "@media (max-width: 640px)": {
+                            // للشاشات الصغيرة
+                            fontSize: "0.65rem", // حجم أصغر للخيارات
+                            padding: "2px 6px",
+                          },
+                        }),
+                      }}
                     />
                   </div>
-
                   <div className="flex">
                     <textarea
                       name=""
@@ -131,7 +150,6 @@ const RequestService = () => {
             </div>
           </div>
         </div>
-
       </section>
     </div>
   );

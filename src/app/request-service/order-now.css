@@ -228,6 +228,7 @@
   height: 35px;
   border: 2px solid #fff;
   border-radius: 100%;
+  
 }
 .btn-hover-shadow:after {
   content: "";
@@ -248,9 +249,10 @@
 .select {
   font-family: "Arial", sans-serif;
   font-size: 16px;
+  
 }
 
-.css-13cymwt-control {
+/* .css-13cymwt-control {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -264,6 +266,8 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   all: unset;
+  width: 50% !important;
+
 }
 
 .select__option {
@@ -273,7 +277,9 @@
 
 .select__option--is-focused {
   background-color: #f0f0f0; /* لون الخلفية عند التركيز */
-}
+  /* width: 50% !important;
+
+}  */
 
 @media (max-width: 868px) {
   .contact-info {

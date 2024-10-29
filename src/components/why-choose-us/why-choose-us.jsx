@@ -53,10 +53,10 @@ const WhyChooseUs = () => {
         </div>
         <div className="flex flex-col gap-5 justify-center items-center text-center m-auto ">
           <div className="gap-4 flex-col md:flex-row flex ">
-            <span className="text-3xl md:text-5xl text-textCont font-bold">
+            <span className="text-xl md:text-5xl text-textCont font-bold">
               رفيقك في رحلة البحث
             </span>
-            <span className="text-3xl md:text-5xl text-text font-bold border-b-4 border-text pb-3 w-max">
+            <span className="text-xl md:text-5xl text-text font-bold border-b-4 border-text pb-3 ">
               عن العمالة المثالية
             </span>
           </div>
@@ -69,11 +69,11 @@ const WhyChooseUs = () => {
             </p>
           </div>
           <div>
-            <button className=" flex hover:scale-105 transition transform duration-200   items-center text-white  bg-textCont px-4 py-2 rounded-lg text-[16px] font-bold gap-2">
+            <button className=" flex hover:scale-105 transition transform duration-200 group  items-center text-white bg-background  hover:bg-textCont  px-4 py-2 rounded-lg text-[16px] font-bold gap-2">
               <span>
                 <FontAwesomeIcon
                   icon={faHeadset}
-                  className="w-5 h-5 text-text bg-white  p-2 rounded-lg transition duration-200 ease-in-out group-hover:bg-iconHover group-hover:scale-110"
+                  className="w-5 h-5 text-text bg-white group-hover:bg-background group-hover:text-white  p-2 rounded-lg transition duration-200 ease-in-out  group-hover:scale-110"
                 />
               </span>
               اتصل بنا 920028066
@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
 
-      <div className="mx-auto p-8 flex flex-col md:flex-row items-center gap-8">
+      <div className="mx-auto my-8 flex flex-col md:flex-row items-center gap-8">
         <div className="md:w-1/2 flex justify-center">
           <Image
             src="/assets/images/p9-1.webp"

@@ -160,7 +160,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="bg-background w-full h-40 relative flex m-auto py-1">
+        {/* <div className="bg-background w-full h-40 relative flex m-auto py-1">
           <div className="flex gap-5 p-5 rounded-xl container items-end justify-between">
             <div>
               <h2 className="text-white text-4xl font-bold"> اتصال بنا</h2>
@@ -178,16 +178,16 @@ const Header = () => {
               <p className="text-smText font-bold">اتصال بنا</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className=" z-50 mt-9 w-full flex items-center justify-between flex-row-reverse bg-white m-auto text-center  Menuo ">
-        <div className="w-40">
+      <div className=" z-[1000] mt-9 w-full flex items-center justify-between flex-row-reverse bg-white m-auto text-center  Menuo ">
+        <div className="w-40 translate-y-[-15%]">
           <img src="/assets/images/logo.webp" alt="logo" width={"100%"} />
         </div>
 
-        <div className="w-1/2 flex justify-center">
-          <button className="icon-menu" onClick={() => setShowModal(true)}>
+        <div className="w-1/2 flex justify-center shadow-custom">
+          <button className="icon-menu  translate-y-[-15%] " onClick={() => setShowModal(true)}>
             <svg
               width="24"
               height="24"
@@ -202,8 +202,8 @@ const Header = () => {
           </button>
 
           {showModal && (
-            <div className="fixed">
-              <ul className={showModal ? "modal" : "modal element-close"}>
+            <div className="fixed ">
+              <ul className={showModal ? "modal" : "modal element-close "}>
                 <li>
                   <button
                     className="icon-x "
@@ -213,22 +213,22 @@ const Header = () => {
                   </button>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/">الصفحة الرئيسية </Link>
+                  <Link href="/" className="lk">الصفحة الرئيسية </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/about">عن الشركة </Link>
+                  <Link href="/about" className="lk">عن الشركة </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/services">خدماتنا ^</Link>
+                  <Link href="/services" className="lk">خدماتنا ^</Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/request-service">طلب الخدمة</Link>
+                  <Link href="/request-service" className="lk">طلب الخدمة</Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/contact">تواصل معنا</Link>
+                  <Link href="/contact" className="lk">تواصل معنا</Link>
                 </li>
                 <div className="flex justify-center items-baseline w-full m-auto static mb-10 ">
-                  <ul className="flex gap-5  items-baseline absolute bottom-0">
+                  <ul className="flex botm items-baseline absolute bottom-0 w-full">
                     <li className="hover:text-white">
                       <Link href="/faq">الأسئلة الشائعة |</Link>
                     </li>
