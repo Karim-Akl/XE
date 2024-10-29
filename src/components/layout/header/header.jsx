@@ -102,17 +102,27 @@ const Header = () => {
                   <ul className="dropdown">
                     <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/7" className="">
-                        خدمة 1
+                        استقدام سائق خاص
                       </Link>
                     </li>
                     <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/8" className="">
-                        خدمة 2
+                        استقدام عاملة منزلية
                       </Link>
                     </li>
                     <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/9" className="">
-                        خدمة 3
+                        تأجير العمالة المنزلية
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
+                      <Link href="/services/9" className="">
+                        عمالة جاهزة لنقل الخدمات
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
+                      <Link href="/services/9" className="">
+                        توفير عمالة من جنسيات متعددة
                       </Link>
                     </li>
                   </ul>
@@ -167,7 +177,10 @@ const Header = () => {
         </div>
 
         <div className="w-1/2 flex justify-center shadow-custom">
-          <button className="icon-menu  translate-y-[-15%] " onClick={() => setShowModal(true)}>
+          <button
+            className="icon-menu  translate-y-[-15%] "
+            onClick={() => setShowModal(true)}
+          >
             <svg
               width="24"
               height="24"
@@ -193,19 +206,29 @@ const Header = () => {
                   </button>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/" className="lk">الصفحة الرئيسية </Link>
+                  <Link href="/" className="lk">
+                    الصفحة الرئيسية{" "}
+                  </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/about" className="lk">عن الشركة </Link>
+                  <Link href="/about" className="lk">
+                    عن الشركة{" "}
+                  </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/services" className="lk">خدماتنا ^</Link>
+                  <Link href="/services" className="lk">
+                    خدماتنا ^
+                  </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/request-service" className="lk">طلب الخدمة</Link>
+                  <Link href="/request-service" className="lk">
+                    طلب الخدمة
+                  </Link>
                 </li>
                 <li onClick={() => setShowModal(false)}>
-                  <Link href="/contact" className="lk">تواصل معنا</Link>
+                  <Link href="/contact" className="lk">
+                    تواصل معنا
+                  </Link>
                 </li>
                 <div className="flex justify-center items-baseline w-full m-auto static mb-10 ">
                   <ul className="flex botm items-baseline absolute bottom-0 w-full">

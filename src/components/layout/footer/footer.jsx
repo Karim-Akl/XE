@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-class relative h-auto flex items-center justify-center text-center w-full flex-col align-center gap-4">
         <div
           style={{ transform: "translateY(-35%)" }} 
-          className="scale top-0 flex z-20 rounded-xl overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-1 bg-background md:flex-row md:w-[80%]  w-11/12 "
+          className="scale top-0 flex z-20 rounded-xl overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-1 bg-background md:flex-row md:w-[70%]  w-[85%] "
         >
           <div className="absolute right-0 md:relative md:w-1/3  w-full opacity-0.5 z-0 h-[100%] img-class-footer">
             <img
@@ -17,15 +17,18 @@ const Footer = () => {
             />
           </div>
           <div className="md:w-1/3 flex flex-col gap-4   ">
-            <h2 className="textCont text-3xl font-bold text-textCont">
+            <h2 className="textCont md:text-3xl text-xl font-bold text-textCont">
               هل لديك سؤال او استفسار؟
             </h2>
-            <p className=" text-xl text-white">
+            <p className=" md:text-xl  text-white">
               تواصل مع خدمة العملاء الان
             </p>
           </div>
           <div className="md:w-1/3 z-10 w-full mb-4">
             <button
+              onClick={() => {
+                window.open("https://wa.me/966559999999", "_blank");
+              }}
               style={{ transition: "0.2s" }}
               className="bg-white text-textCont rounded-xl hover:bg-iconHover hover:text-text font-bold"
             >

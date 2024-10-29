@@ -22,7 +22,7 @@ export default function FeatureSection() {
       {/* Top Feature Cards */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 px-4">
         {/* Card 1 */}
-        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg h-60  justify-center md:translate-y-[-30%] p-6 w-80 hover:translate-y-[-5%]  md:hover:translate-y-[-35%]  transition  duration-200 bn">
+        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg w-72 h-60  justify-center md:translate-y-[-30%] p-6  hover:translate-y-[-5%]  md:hover:translate-y-[-35%]  transition  duration-200 bn">
           <FontAwesomeIcon
             icon={faGem}
             className="text-yellow-700 text-4xl mb-4"
@@ -36,7 +36,7 @@ export default function FeatureSection() {
           </p>
         </div>
         {/* Card 2 */}
-        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg p-6 w-80 h-64  justify-center md:translate-y-[-10%]  md:hover:translate-y-[-15%] hover:translate-y-[-5%]   transition  duration-200">
+        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg p-6 w-72 h-64  justify-center md:translate-y-[-10%]  md:hover:translate-y-[-15%] hover:translate-y-[-5%]   transition  duration-200">
           <FontAwesomeIcon
             icon={faLightbulb}
             className="text-yellow-700 text-4xl mb-4"
@@ -49,7 +49,7 @@ export default function FeatureSection() {
           </p>
         </div>
         {/* Card 3 */}
-        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg p-6 w-80 h-60  md:translate-y-[-30%] justify-center md:hover:translate-y-[-36%] hover:translate-y-[-5%] transition  duration-200">
+        <div className="flex flex-col items-center text-center bg-white shadow-custom rounded-lg p-6 w-72 h-60  md:translate-y-[-30%] justify-center md:hover:translate-y-[-36%] hover:translate-y-[-5%] transition  duration-200">
           <FontAwesomeIcon
             icon={faHeadset}
             className="text-yellow-700 text-4xl mb-4"

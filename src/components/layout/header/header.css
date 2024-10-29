@@ -34,7 +34,7 @@
 .dropdown {
   display: none; /* إخفاء القائمة بشكل افتراضي */
   position: absolute;
-  width: 200px; /* عرض القائمة */
+  width: 250px; /* عرض القائمة */
   transition: 0.7s;
   background-color: #fff; /* خلفية بيضاء */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل */
