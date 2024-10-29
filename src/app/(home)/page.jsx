@@ -17,6 +17,7 @@ const Home = () => {
       <Hero />
       <FeatureSection />
       <ReviewsSwiper />
+      
     </>
   );
 };
