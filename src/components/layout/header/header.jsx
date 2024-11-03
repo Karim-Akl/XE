@@ -2,6 +2,18 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPhoneAlt,
+  faMapMarkerAlt,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faWhatsapp,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -15,7 +27,7 @@ const Header = () => {
           >
             <div className="flex items-top justify-between gap-3">
               <p className="text-smText">لديك استفسار؟ راسلنا الان</p>
-              <p className="flex items-top gap-2 text-white hover:text-text">
+              <p className="flex items-top gap-2 text-white hover:text-text space-x-3">
                 <span>
                   <img
                     src="/assets/images/WhatsApp.svg_ copy.webp"
@@ -42,7 +54,7 @@ const Header = () => {
           </div>
         </nav>
 
-        <div className="z-10 bg-white  md:w-[85%]  sm:w-[98%] sm:mb-5 absolute p-2 translate-y-20 rounded-xl h-auto flex items-center justify-between">
+        <div className="z-10 bg-white md:w-[85%] sm:w-[98%] sm:mb-5 absolute p-2 translate-y-20 rounded-xl h-auto flex items-center justify-between">
           <div className="w-1/3">
             <Link href="/">
               <img
@@ -56,36 +68,31 @@ const Header = () => {
           <div className="w-1/2 flex justify-evenly items-right text-right flex-col">
             <div className="lin-1 flex gap-8">
               <div className="flex gap-5 hover:text-text">
-                <div className="icon-1">
-                  <img
-                    src="/assets/images/icon-03.webp"
-                    alt=""
-                    width={"100%"}
-                  />
+                <div className="icon-1 text-primary iconeee">
+                  <FontAwesomeIcon icon={faPhoneAlt} className="text-icon" />
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-xl text-smText">اتصل بنا: </p>
-                  <p className="font-bold  md:text-sm xl:text-xl">920028066</p>
+                  <p className="font-bold md:text-lg xl:text-lg">920028066</p>
                 </div>
               </div>
               <div className="flex gap-5 hover:text-text">
-                <div className="icon-1">
-                  <img
-                    src="/assets/images/icon-03.webp"
-                    alt=""
-                    width={"100%"}
+                <div className="icon-1 text-primary iconeee">
+                  <FontAwesomeIcon
+                    icon={faMapMarkerAlt}
+                    className="text-icon"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-xl text-smText">العنوان:</p>
-                  <p className="font-bold  md:text-sm xl:text-xl">
+                  <p className="font-bold md:text-lg xl:text-lg">
                     طريق أبو بكر الصديق، حي الإسكان، بريدة
                   </p>
                 </div>
               </div>
             </div>
             <div className="devi"></div>
-            <div className="lin-2 flex justify-evenly ">
+            <div className="lin-2 flex justify-evenly">
               <ul className="flex gap-5">
                 <li className="text-textCont hover:text-text">
                   <Link href="/">الصفحة الرئيسية</Link>
@@ -93,77 +100,69 @@ const Header = () => {
                 <li className="text-textCont hover:text-text">
                   <Link href="/about">عن الشركة</Link>
                 </li>
-                {/* تعديل قائمة "خدماتنا" هنا */}
                 <li className="text-textCont hover:text-text relative ul-class">
                   <Link href="/services" className="ul-class">
-                    خدماتنا ^{" "}
+                    خدماتنا
+                    <span className="mr-1">
+                      <FontAwesomeIcon
+                        icon={faChevronDown}
+                        className=""
+                      />
+                    </span>
                   </Link>
-                  {/* القائمة المنسدلة */}
-                  <ul className="dropdown">
+                  <ul className="dropdown rounded-xl">
                     <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/7" className="">
                         استقدام سائق خاص
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
+                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/8" className="">
                         استقدام عاملة منزلية
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
+                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
                       <Link href="/services/9" className="">
                         تأجير العمالة المنزلية
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/9" className="">
+                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
+                      <Link href="/services/10" className="">
                         عمالة جاهزة لنقل الخدمات
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100  hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/9" className="">
+                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
+                      <Link href="/services/11" className="">
                         توفير عمالة من جنسيات متعددة
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="text-textCont hover:text-text">
-                  <Link href="/request-service"> طلب الخدمة</Link>
+                  <Link href="/request-service">طلب الخدمة</Link>
                 </li>
                 <li className="text-textCont hover:text-text">
                   <Link href="/contact">تواصل معنا</Link>
                 </li>
               </ul>
-              <div className="flex gap-5 ">
-                <a
-                  href="https://wa.me/920028066  "
-                  className=" hover:bg-bgIcon rounded-full w-6 h-6 flex m-auto  "
-                >
-                  <img
-                    src="/assets/images/WhatsApp.svg_ copy.webp"
-                    alt=""
-                    width={"100%"}
-                  />
-                </a>
+              <div className="flex gap-5">
                 <a
                   href="https://wa.me/920028066"
-                  className=" hover:bg-bgIcon rounded-full w-6 h-6 flex m-auto "
+                  className="icon-social hover-icon rotate-on-hover"
                 >
-                  <img
-                    src="/assets/images/WhatsApp.svg_ copy.webp"
-                    alt=""
-                    width={"100%"}
-                  />
+                  <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
                 <a
-                  href="https://wa.me/920028066"
-                  className=" hover:bg-bgIcon rounded-full w-6 h-6 flex m-auto "
+                  href="https://www.instagram.com"
+                  className="icon-social hover-icon rotate-on-hover"
                 >
-                  <img
-                    src="/assets/images/WhatsApp.svg_ copy.webp"
-                    alt=""
-                    width={"100%"}
-                  />
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  className="icon-social hover-icon rotate-on-hover"
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </div>
             </div>

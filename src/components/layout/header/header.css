@@ -20,6 +20,35 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.text-icon {
+  color: #c69d4d;
+  font-size: x-large;
+}
+.iconeee:hover .text-icon{
+  color: #fff !important;
+
+}
+
+
+
+/* اللون الافتراضي للأيقونات الاجتماعية وتغيير اللون عند التمرير */
+.icon-social {
+  color: var(--secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: large;
+  padding: 5px;
+}
+
+.icon-social:hover {
+  background-color: #c69d4d;
+  border-radius: 50%;
+  color: #ffffff; /* يصبح اللون أبيض عند التمرير */
+  transform: rotate(360deg); /* تدوير الأيقونة 360 درجة */
+}
+
+.rotate-on-hover {
+  display: inline-block;
+}
 
 .relative {
   position: relative; /* التأكد من أن العنصر له موضع */

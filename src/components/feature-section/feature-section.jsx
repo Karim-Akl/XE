@@ -67,8 +67,10 @@ export default function FeatureSection() {
       <div className="flex flex-col lg:flex-row justify-center items-center gap-16 mt-12 pb-12 px-4">
         {/* Bangladesh */}
         <div className="flex flex-col items-center md:mb-[15%] z-20">
-          <div className="w-40 h-40 rounded-full bg-green-600 flex items-center justify-center transform rotate-6 hover:translate-y-[-10%] transition  duration-200 ">
-            <span className="text-red-500 text-5xl "><img src="/assets/images/bangladesh.png" alt="" /></span>
+          <div className="w-40 h-40 rounded-full bg-green-600 flex items-center justify-center transform  hover:translate-y-[-10%] transition  duration-200 ">
+            <span className="text-red-500 text-5xl ">
+              <img src="/assets/images/bangladesh.png" alt="" />
+            </span>
           </div>
           <p className="text-white text-lg font-bold  mt-2">
             استقدام من بنجلاديش
@@ -76,8 +78,10 @@ export default function FeatureSection() {
         </div>
         {/* Sri Lanka */}
         <div className="flex flex-col items-center md:mb-[10%] z-20 cursor-pointer">
-          <div className="w-40 h-40 rounded-full bg-yellow-500 flex items-center justify-center transform -rotate-6 hover:translate-y-[-10%] transition  duration-200">
-            <span className="text-brown-800 text-5xl">🇱🇰</span>
+          <div className="w-40 h-40 rounded-full bg-yellow-500 flex items-center justify-center transform  hover:translate-y-[-10%] transition  duration-200">
+            <span className="text-brown-800 text-5xl">
+              <img src="/assets/images/sri-lanka.png" alt="" />
+            </span>
           </div>
           <p className="text-white text-lg font-bold mt-2">
             استقدام من سريلانكا
@@ -85,22 +89,28 @@ export default function FeatureSection() {
         </div>
         {/* Kenya */}
         <div className="flex flex-col items-center md:mb-[0%] z-20 cursor-pointer">
-          <div className="w-40 h-40 rounded-full bg-black flex items-center justify-center transform rotate-6 hover:translate-y-[-10%] transition  duration-200">
-            <span className="text-red-600 text-5xl">🇰🇪</span>
+          <div className="w-40 h-40 rounded-full bg-black flex items-center justify-center transform  hover:translate-y-[-10%] transition  duration-200">
+            <span className="text-red-600 text-5xl">
+              <img src="/assets/images/kenya.png" alt="" />
+            </span>
           </div>
           <p className="text-white text-lg font-bold mt-2">استقدام من كينيا</p>
         </div>
         {/* India */}
         <div className="flex flex-col items-center md:mb-[10%] z-20 cursor-pointer">
-          <div className="w-40 h-40 rounded-full bg-orange-500 flex items-center justify-center transform -rotate-6 hover:translate-y-[-10%] transition  duration-200">
-            <span className="text-white text-5xl">🇮🇳</span>
+          <div className="w-40 h-40 rounded-full bg-orange-500 flex items-center justify-center transform  hover:translate-y-[-10%] transition  duration-200">
+            <span className="text-white text-5xl">
+              <img src="/assets/images/india.png" alt="" />
+            </span>
           </div>
           <p className="text-white text-lg font-bold mt-2">استقدام من الهند</p>
         </div>
         {/* Ethiopia */}
         <div className="flex flex-col items-center md:mb-[15%] z-20 cursor-pointer">
-          <div className="w-40 h-40 rounded-full bg-green-700 flex items-center justify-center transform rotate-6 hover:translate-y-[-10%] transition  duration-200">
-            <span className="text-yellow-500 text-5xl">🇪🇹</span>
+          <div className="w-40 h-40 rounded-full bg-green-700 flex items-center justify-center transform  hover:translate-y-[-10%] transition  duration-200">
+            <span className="text-yellow-500 text-5xl">
+              <img src="/assets/images/ethiopia.png" alt="" />
+            </span>
           </div>
           <p className="text-white text-lg font-bold mt-2  z-20 cursor-pointer">
             استقدام من أثيوبيا
