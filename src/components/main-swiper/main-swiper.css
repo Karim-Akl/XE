@@ -1,5 +1,5 @@
 main {
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   /* border-bottom: 3px solid var(--icon-hover); */
   width: 100% !important;
@@ -7,7 +7,7 @@ main {
 .main-class {
   background-image: url(../../../public/assets/images/bk03.webp);
   background-repeat: no-repeat;
-  background-position:left;
+  background-position: left;
   background-size: cover;
   height: auto;
   display: flex;
@@ -16,7 +16,7 @@ main {
   cursor: pointer;
 }
 .slider-2 {
-  background-image: url(../../../public/assets/images/bg3-1.webp);
+  background-image: url(../../../public/assets/images/bk02-2.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -43,7 +43,7 @@ main {
 .main-class,
 .slider-2,
 .slider-3 {
-  height: 80vh !important;
+  height: 85vh !important;
   position: relative;
   display: flex;
   justify-content: center;
@@ -52,12 +52,6 @@ main {
   margin: auto;
   /* background-color: var(--background) !important; */
   overflow: hidden;
-}
-.main-class .flex {
-  display: flex;
-  justify-content: space-between !important;
-  align-items: center;
-  gap: 50px;
 }
 .img-lift-class {
   position: absolute;
@@ -120,7 +114,128 @@ main {
       Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   }
 }
+.text-class-1{
+  color: rgb(110, 80, 22);
+  text-align: right;
+  line-height: 66px;
+  font-weight: 700;
+  font-size: 58px;
+}
+.text-class-2{
+  text-align: right;
+  line-height: 66px;
+  font-weight: 600;
+  font-size: 25px;
+}
+.text-class-3{
+  text-align: right;
+  line-height: 66px;
+  font-weight: 400;
+  font-size: 25px;
+}
+.btu-1{
+  z-index: 10;
+  background-color: rgb(198, 157, 78);
+  font-family: Cairo;
+  height: auto;
+  width: auto;
+  color: rgb(101, 77, 60);
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  text-align: right;
+  line-height: 46px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px 0px;
+  padding: 0px 37px;
+  border-radius: 5px;
+  backdrop-filter: none;
+  filter: brightness(100%);
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  visibility: visible;
+  border-width: 0px;
+}
+.btu-2{
+  z-index: 11;
+  font-family: Cairo;
+  height: auto;
+  width: auto;
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  text-align: right;
+  line-height: 46px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-size: 15px;
+  border-color: rgba(12, 12, 12, 0.4);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px 0px;
+  padding: 0px 37px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: none;
+  filter: brightness(100%);
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  visibility: visible;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
 
+@media only screen and (max-width: 1067px) {
+  .text-class-1{
+    color: rgb(110, 80, 22);
+    text-align: right;
+    line-height: normal !important;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .text-class-2{
+    text-align: right;
+    font-weight: 600;
+    line-height: normal !important;
+    font-size: 15px;
+  }
+  .text-class-3{
+    text-align: right;
+    line-height: normal !important;
+    font-weight: 400;
+    font-size: 12px;
+    width: 50%;
+  }
+.btu-2,
+.btu-1 {
+  padding: 0px 12px;
+  line-height: 35px;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px 0px;
+  border-radius: 5px;
+  backdrop-filter: none;
+  filter: brightness(100%);
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  visibility: visible;
+  border-width: 0px;
+
+}
+}
 .slider-3-text {
   width: 40%;
   margin: auto;
@@ -179,12 +294,13 @@ main {
 }
 @media only screen and (max-width: 1067px) {
   main {
-    height: 80vh;
+    height: 70vh;
   }
 
   .main-class,
   .slider-2,
-  .slider-3 ,main{
+  .slider-3,
+  main {
     height: 70vh !important;
     overflow: hidden;
     /* height: 100%; */

@@ -68,7 +68,7 @@ export default function FeatureSection() {
         {/* Bangladesh */}
         <div className="flex flex-col items-center md:mb-[15%] z-20">
           <div className="w-40 h-40 rounded-full bg-green-600 flex items-center justify-center transform rotate-6 hover:translate-y-[-10%] transition  duration-200 ">
-            <span className="text-red-500 text-5xl ">🇧🇩</span>
+            <span className="text-red-500 text-5xl "><img src="/assets/images/bangladesh.png" alt="" /></span>
           </div>
           <p className="text-white text-lg font-bold  mt-2">
             استقدام من بنجلاديش
