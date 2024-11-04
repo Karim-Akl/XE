@@ -9,7 +9,7 @@ export default function MoyasarPaymentForm() {
         amount: 1000, // Adjust the amount as needed
         currency: "SAR",
         description: "Coffee Order #1",
-        publishable_api_key: "pk_test_AQpxBV31a29qhkhUYFYUFjhwllaDVrxSq5ydVNui",
+        publishable_api_key: "pk_test_cGYZbwKBYQup1MQagNvea8uAg51Am9Zez2ZUwXGa",
         callback_url: "https://moyasar.com/thanks",
         methods: ["creditcard"],
       });

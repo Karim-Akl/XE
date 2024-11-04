@@ -151,7 +151,8 @@
   }
   input,
   textarea,
-  .select {
+  .select,
+  .price-input {
     padding: 19px 40px;
     transition: all 0.3s ease;
     font-size: 16px;
@@ -228,7 +229,6 @@
   height: 35px;
   border: 2px solid #fff;
   border-radius: 100%;
-  
 }
 .btn-hover-shadow:after {
   content: "";
@@ -249,37 +249,28 @@
 .select {
   font-family: "Arial", sans-serif;
   font-size: 16px;
-  
 }
-
-/* .css-13cymwt-control {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  all: unset;
-  width: 50% !important;
-
+.css-utbxa3-control {
+  background-color: #edf2f6 !important;
+  height: 20px !important;
+  border-width: 0px !important;
+  min-height: auto !important;
 }
-
-.select__option {
-  padding: 10px;
-  cursor: pointer;
+.css-1wy0on6,
+.css-19bb58m:after {
+  display: none !important;
 }
-
-.select__option--is-focused {
-  background-color: #f0f0f0; /* لون الخلفية عند التركيز */
-  /* width: 50% !important;
-
-}  */
+.select__input {
+  margin-inline: -13px !important;
+}
+.form-info {
+  input:focus,
+  textarea:focus .select:focus {
+    border-color: #d3dcdc !important;
+    box-shadow: 17px 0 60px #d3dcdc;
+    background-color: #fff;
+  }
+}
 
 @media (max-width: 868px) {
   .contact-info {
@@ -295,4 +286,118 @@
     padding: 0px !important;
     width: 90% !important;
   }
+}
+
+/* From Uiverse.io by Yaya12085 - Modified for Dark Mode */
+.radio-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-inputs > * {
+  margin: 6px;
+}
+
+.radio-input:checked + .radio-tile {
+  border-color: var(--background);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+  color: var(--background);
+}
+
+.radio-input:checked + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: var(--background);
+  border-color: var(--background);
+}
+
+.radio-input:checked + .radio-tile .radio-icon svg {
+  fill: var(--background);
+}
+
+.radio-input:checked + .radio-tile .radio-label {
+  color: var(--background);
+}
+
+.radio-input:focus + .radio-tile {
+  border-color: var(--background) !important;
+
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1), 0 0 0 4px var(--background);
+}
+
+.radio-input:focus + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  border: 2px solid #4a5265;
+  background-color: var(--white);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.05);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  margin-top: 10px;
+}
+
+.radio-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.60rem;
+  height: 0.60rem;
+  border: 2px solid #4a5265;
+  background-color: #1e2129;
+  border-radius: 50%;
+  top: 0.35rem;
+  /* left: 0.5rem; */
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+  border-color: var(--background) !important;
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #b6b6b6;
+}
+
+.radio-label {
+  color: #8f8f8f;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 13px;
+}
+
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
