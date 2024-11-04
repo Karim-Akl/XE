@@ -118,11 +118,6 @@ const Main = () => {
                 alt=""
               />
             </div>
-            <div
-              className={`animate__animated animate__zoomIn animate__delay-4s ${imgAnLight} img-top-and-right`}
-            >
-              <img src="/assets/images/Group-5.png" alt="" />
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -173,23 +168,7 @@ const Main = () => {
             <div
               className={`animate__animated animate__fadeInRight animate__delay-3s ${imgAnLight} img-right-class-2`}
             >
-              <img
-                src={process.env.PUBLIC_URL + "/assets/images/Group-4.png"}
-                alt=""
-              />
-            </div>
-            <div
-              className={`animate__animated animate__fadeInDown animate__delay-3s ${imgAnLight} img-top-and-right`}
-            >
-              <img src="/assets/images/Group-5.png" alt="" />
-            </div>
-            <div
-              className={`animate__animated animate__fadeInUp animate__delay-4s ${imgAnLight} img-right-class`}
-            >
-              <img
-                src={process.env.PUBLIC_URL + "/assets/images/Group-4.png"}
-                alt=""
-              />
+              <img src="/assets/images/4.png" alt="" />
             </div>
           </div>
         </SwiperSlide>
@@ -220,30 +199,6 @@ const Main = () => {
               {/* الصور الصغيرة */}
               <div className="img-foote-smoll animate__animated animate__fadeInLeft animate__delay-1s">
                 <img src="/assets/images/4.png" alt="" />
-              </div>
-
-              <div
-                className={`animate__animated animate__zoomIn animate__delay-2s ${imgAn} img-lift-class`}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "/assets/images/Group-4.png"}
-                  alt=""
-                />
-              </div>
-
-              <div
-                className={`animate__animated animate__fadeInRight animate__delay-3s ${imgAnLight} img-right-class`}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "/assets/images/Group-4.png"}
-                  alt=""
-                />
-              </div>
-
-              <div
-                className={`animate__animated animate__zoomIn animate__delay-4s ${imgAnLight} img-top-and-right`}
-              >
-                <img src="/assets/images/Group-5.png" alt="" />
               </div>
             </div>
           </div>

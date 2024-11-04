@@ -1,7 +1,8 @@
+// src/app/layout.js
+
 import Header from "@/components/layout/header/header";
-import "../../globals.css";
 import Footer from "@/components/layout/footer/footer";
-import Head from "next/head"; // استيراد Head
+import "../../globals.css";
 
 export const metadata = {
   title: "XE",
@@ -10,15 +11,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <Head>
+    <html lang="ar">
+      <head>
+        {/* Moyasar Styles and Scripts */}
         <link
           rel="stylesheet"
           href="https://cdn.moyasar.com/mpf/1.14.0/moyasar.css"
         />
-        <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=fetch" />
-        <script src="https://cdn.moyasar.com/mpf/1.14.0/moyasar.js" />
-      </Head>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/polyfill/7.0.0/polyfill.min.js"
+          async
+        ></script>
+        <script
+          src="https://cdn.moyasar.com/mpf/1.14.0/moyasar.js"
+          async
+        ></script>
+      </head>
       <body>
         <Header />
         {children}

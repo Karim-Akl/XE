@@ -1,0 +1,60 @@
+.mysr-form {
+  /* Center the form and add space above and below */
+  margin-top: 150px !important;
+  margin-bottom: 150px !important;
+
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* Additional styles for a larger appearance */
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+}
+
+/* Optional: Customize input fields within the Moyasar form */
+.mysr-form input,
+.mysr-form button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Add padding inside each field to make it larger */
+.mysr-form input {
+  margin-bottom: 10px;
+}
+
+/* Style the submit button */
+.mysr-form button {
+  background-color: var(--background) !important; /* Change to preferred color */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mysr-form button:hover {
+  background-color: var(--icon-hover) !important; /* Change to preferred color */
+}
+@media (max-width: 768px) {
+.mysr-form {
+  margin-bottom: 150px !important;
+  margin-top: 50px !important;
+
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 370px !important;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+  margin:  auto;
+}}
