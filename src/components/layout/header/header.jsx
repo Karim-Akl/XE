@@ -16,6 +16,23 @@ import {
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
+  const [options, setOptions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    fetch("https://xealkhalej-backend.alwajez.com/api/user/services")
+      .then((response) => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then((data) => {
+        setOptions(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching services:", error);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <header className="relative top-0 w-full flex justify-center align-content-center m-auto flex-col items-center md:flex-col">
@@ -104,38 +121,35 @@ const Header = () => {
                   <Link href="/services" className="ul-class">
                     خدماتنا
                     <span className="mr-1">
-                      <FontAwesomeIcon
-                        icon={faChevronDown}
-                        className=""
-                      />
+                      <FontAwesomeIcon icon={faChevronDown} className="" />
                     </span>
                   </Link>
-                  <ul className="dropdown rounded-xl">
-                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/7" className="">
-                        استقدام سائق خاص
-                      </Link>
-                    </li>
-                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/8" className="">
-                        استقدام عاملة منزلية
-                      </Link>
-                    </li>
-                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/9" className="">
-                        تأجير العمالة المنزلية
-                      </Link>
-                    </li>
-                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/10" className="">
-                        عمالة جاهزة لنقل الخدمات
-                      </Link>
-                    </li>
-                    <li className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text">
-                      <Link href="/services/11" className="">
-                        توفير عمالة من جنسيات متعددة
-                      </Link>
-                    </li>
+
+                  <ul className="dropdown rounded-xl ">
+                    {isLoading ? (
+                      <div>
+                        <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                          {" "}
+                        </li>
+                        <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                          {" "}
+                        </li>
+                        <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                          {" "}
+                        </li>
+                      </div>
+                    ) : (
+                      options.map((option) => (
+                        <li
+                          className="p-2 hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text"
+                          key={option.id}
+                        >
+                          <Link href={`/services/${option.id}`} className="">
+                            {option.title || ""}
+                          </Link>
+                        </li>
+                      ))
+                    )}
                   </ul>
                 </li>
                 <li className="text-textCont hover:text-text">

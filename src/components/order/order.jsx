@@ -1,12 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import Link from "next/link";
+import _orderLoding from "./_orderLoding";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 import "./order.css";
 
 function Order() {
+  const router = typeof window !== "undefined" ? useRouter() : null;
   const [options, setOptions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [price, setPrice] = useState("");
   const [formData, setFormData] = useState({
@@ -15,7 +20,7 @@ function Order() {
     client_phone: "",
     notes: "",
   });
-  const [paymentMethod, setPaymentMethod] = useState("cash"); // حالة لتخزين طريقة الدفع
+  const [paymentMethod, setPaymentMethod] = useState("cash");
 
   useEffect(() => {
     fetch("https://xealkhalej-backend.alwajez.com/api/user/services")
@@ -57,9 +62,11 @@ function Order() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (!selectedService) {
       alert("Please select a service.");
+      setIsSubmitting(false);
       return;
     }
 
@@ -69,12 +76,14 @@ function Order() {
       client_phone: formData.client_phone,
       service_id: selectedService.value,
       payment_status: "pending",
-      payment_gate: paymentMethod, // استخدم طريقة الدفع المحددة
+      payment_gate: paymentMethod,
       booking_status: "pending",
       notes: formData.notes,
     };
 
     try {
+      console.log("Sending booking data:", bookingData);
+
       const response = await fetch(
         "https://xealkhalej-backend.alwajez.com/api/user/add-booking",
         {
@@ -86,17 +95,69 @@ function Order() {
         }
       );
 
+      console.log("Response status:", response.status);
       if (!response.ok) throw new Error("Failed to submit booking.");
 
-      alert("Booking submitted successfully!");
+      const result = await response.json();
+      console.log("Booking result:", result);
+
+      toast.success("تم حجز الخدمة بنجاح! سنتواصل معكم قريباً.");
+
+      const booking_id = result.booking.id;
+
+      if (paymentMethod === "cash") {
+        const transactionData = {
+          booking_id,
+          amount: price,
+          payment_status: "success",
+          payment_method: "cash",
+          transaction_id: `CASH${Math.floor(Math.random() * 1000000)}`,
+        };
+
+        console.log("Sending transaction data:", transactionData);
+
+        const transactionResponse = await fetch(
+          "https://xealkhalej-backend.alwajez.com/api/user/add-transaction",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(transactionData),
+          }
+        );
+
+        console.log("Transaction response status:", transactionResponse.status);
+        if (!transactionResponse.ok)
+          throw new Error("Failed to submit transaction.");
+
+        toast.success("تمت إضافة المعاملة النقدية بنجاح.");
+      } else if (paymentMethod === "mada" && router) {
+        localStorage.setItem("booking_id", booking_id);
+        router.push("/PaymentPage");
+      }
+
+      setFormData({
+        client_name: "",
+        client_email: "",
+        client_phone: "",
+        notes: "",
+      });
+      setSelectedService(null);
+      setPrice("");
+      setPaymentMethod("cash");
     } catch (error) {
-      console.error("Error submitting booking:", error);
-      alert("An error occurred. Please try again.");
+      console.error("Error submitting booking or transaction:", error);
+      toast.error("حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.");
     }
+
+    setIsSubmitting(false);
   };
 
   return (
     <div>
+      <ToastContainer position="top-center" autoClose={5000} />
+
       <div className="bg-background w-full h-40 relative flex m-auto py-1 nav-route">
         <div className="flex gap-5 p-5 rounded-xl container items-end justify-between">
           <div>
@@ -120,39 +181,7 @@ function Order() {
         <div className="contact">
           <div className="container">
             {isLoading ? (
-              <div>
-                <div className="flex flex-col">
-                  <div className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"></div>
-                </div>
-                <div className="flex flex-col mt-2">
-                  <div className="animate-pulse bg-gray-300 w-72 h-6 rounded-full mb-2"></div>
-                </div>
-                <div className="loading-div w-full animate-pulse h-96 items-center justify-center grid grid-cols-2 gap-2">
-                  <div className="flex flex-col">
-                    <div className="animate-pulse bg-gray-300 w-96 h-14 rounded-full mb-2"></div>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <div className="animate-pulse bg-gray-300 w-96 h-14 rounded-full mb-2"></div>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <div className="animate-pulse bg-gray-300 w-96 h-14 rounded-full mb-2"></div>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <div className="animate-pulse bg-gray-300 w-96 h-14 rounded-full mb-2"></div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col w-full mt-2">
-                  <div className="animate-pulse bg-gray-300 w-full h-36 rounded-full mb-2"></div>
-                </div>
-
-                <div className="flex flex-col w-full mt-2">
-                  <div className="animate-pulse bg-gray-300 w-24 h-14 rounded-full"></div>
-                </div>
-              </div>
+              <_orderLoding />
             ) : (
               <div className="contact-form">
                 <div className="form-title">
@@ -230,31 +259,34 @@ function Order() {
                               <input
                                 className="radio-input"
                                 type="radio"
-                                name="engine"
+                                name="paymentMethod"
+                                value="cash"
+                                checked={paymentMethod === "cash"}
+                                onChange={handlePaymentMethodChange}
                               />
                               <span className="radio-tile">
-
-                                <span className="radio-label">كاش </span>
+                                <span className="radio-label">
+                                  الدفع نقداً{" "}
+                                </span>
                               </span>
                             </label>
                             <label>
                               <input
-                                defaultChecked=""
                                 className="radio-input"
                                 type="radio"
-                                name="engine"
+                                name="paymentMethod"
+                                value="mada"
+                                checked={paymentMethod === "mada"}
+                                onChange={handlePaymentMethodChange}
                               />
                               <span className="radio-tile">
-    
-                                <span className="radio-label">فيزا</span>
+                                <span className="radio-label">الدفع بفيزا</span>
                               </span>
                             </label>
-
                           </div>
                         </div>
                       )}
                     </div>
-
                     <div className="flex">
                       <textarea
                         name="notes"
@@ -265,10 +297,14 @@ function Order() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    <div className="flex but-form">
-                      <button type="submit">
-                        <span>ارسل الطلب</span>
-                        <span className="semicircle"></span>
+                    <div className="flex but-form relative ">
+                      <button type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <span>جاري الإرسال...</span>
+                        ) : (
+                          <span>ارسل الطلب</span>
+                        )}
+                        <span className="semicircle absolute"></span>
                       </button>
                     </div>
                   </form>

@@ -37,24 +37,24 @@ const Page = ({ params }) => {
   return (
     <div>
       <div className="bg-background w-full h-40 relative flex m-auto py-1 nav-route">
-          <div className="flex gap-5 p-5 rounded-xl container items-end justify-between">
-            <div>
-              <h2 className="text-white text-4xl font-bold"> اتصال بنا</h2>
-            </div>
-            <div className="flex gap-5 bg-white p-3 rounded-xl">
-              <a href="/">
-                <img
-                  src="/assets/images/icon-03.webp"
-                  alt=""
-                  width={20}
-                  className="object-cover"
-                />
-              </a>
-              <p>{`>`}</p>
-              <p className="text-smText font-bold">اتصال بنا</p>
-            </div>
+        <div className="flex gap-5 p-5 rounded-xl container items-end justify-between">
+          <div>
+            <h2 className="text-white text-4xl font-bold"> اتصال بنا</h2>
+          </div>
+          <div className="flex gap-5 bg-white p-3 rounded-xl">
+            <a href="/">
+              <img
+                src="/assets/images/icon-03.webp"
+                alt=""
+                width={20}
+                className="object-cover"
+              />
+            </a>
+            <p>{`>`}</p>
+            <p className="text-smText font-bold">اتصال بنا</p>
           </div>
         </div>
+      </div>
       <section className="services-details container mt-10 mb-10 h-auto">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10">
           <div className="flex justify-center">
@@ -114,15 +114,17 @@ const Page = ({ params }) => {
               </div>
 
               <div className="mt-10">
-                <button
-                  type="submit"
-                  className="relative bg-[var(--text)] text-white py-4 px-10 rounded-xl transition-all duration-300 ease-in-out cursor-pointer text-[15px] font-bold uppercase border-transparent hover:bg-[var(--primary)]"
-                >
-                  <span>اطلب الان</span>
-                  <span className="semicircle absolute top-2 left-[120px] w-[11px] h-[35px] overflow-hidden">
-                    <span className="block absolute w-[35px] h-[35px] border-2 border-white rounded-full"></span>
-                  </span>
-                </button>
+                <Link href="/request-service">
+                  <button
+                    type="submit"
+                    className="relative bg-[var(--text)] text-white py-4 px-10 rounded-xl transition-all duration-300 ease-in-out cursor-pointer text-[15px] font-bold uppercase border-transparent hover:bg-[var(--primary)]"
+                  >
+                    <span>اطلب الان</span>
+                    <span className="semicircle absolute top-2 left-[120px] w-[11px] h-[35px] overflow-hidden">
+                      <span className="block absolute w-[35px] h-[35px] border-2 border-white rounded-full"></span>
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
