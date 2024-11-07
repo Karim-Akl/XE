@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import "./order.css";
 
 function Order() {
-  const router = typeof window !== "undefined" ? useRouter() : null;
+  const router = useRouter(); // Call useRouter unconditionally
   const [options, setOptions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
