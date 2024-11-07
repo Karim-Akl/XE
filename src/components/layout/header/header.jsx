@@ -91,7 +91,9 @@ const Header = () => {
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-xl text-smText">اتصل بنا: </p>
-                  <p className="font-bold md:text-lg xl:text-lg text-textCont">920028066</p>
+                  <p className="font-bold md:text-lg xl:text-lg text-textCont">
+                    920028066
+                  </p>
                 </div>
               </div>
               <div className="flex gap-5 hover:text-text">
@@ -231,7 +233,7 @@ const Header = () => {
                 </li>
                 <li onClick={() => setShowModal(false)}>
                   <Link href="/services" className="lk">
-                    خدماتنا 
+                    خدماتنا
                   </Link>
                 </li>
                 <li
@@ -239,7 +241,7 @@ const Header = () => {
                   onClick={() => setShowServices(!showServices)} // التحكم في فتح وإغلاق القائمة المنبثقة
                 >
                   <Link href="#" className="ul-class font-bold">
-                     كل خدماتنا
+                    كل خدماتنا
                     <span className="mr-1">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </span>
@@ -250,9 +252,15 @@ const Header = () => {
                     <ul className="dropdown rounded-xl">
                       {isLoading ? (
                         <div>
-                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
-                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
-                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                            {" "}
+                          </li>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                            {" "}
+                          </li>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
+                            {" "}
+                          </li>
                         </div>
                       ) : (
                         options.map((option) => (
@@ -276,14 +284,23 @@ const Header = () => {
                 </li>
                 <div className="flex justify-center items-baseline w-full m-auto static mb-10 ">
                   <ul className="flex botm items-baseline absolute bottom-0 w-full">
-                    <li className="hover:text-white">
+                    <li
+                      className="hover:text-white"
+                      onClick={() => setShowModal(false)}
+                    >
                       <Link href="/faq">الأسئلة الشائعة |</Link>
                     </li>
-                    <li className="hover:text-white">
+                    <li
+                      className="hover:text-white"
+                      onClick={() => setShowModal(false)}
+                    >
                       <Link href="/conditions">الشروط والأحكام |</Link>
                     </li>
 
-                    <li className="hover:text-white">
+                    <li
+                      className="hover:text-white"
+                      onClick={() => setShowModal(false)}
+                    >
                       <Link href="/privacy-policy">سياسة الخصوصية</Link>
                     </li>
                   </ul>

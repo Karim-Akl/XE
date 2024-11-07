@@ -10,7 +10,7 @@ const Page = () => {
 <div className="bg-background w-full h-40 relative flex m-auto py-1 nav-route">
           <div className="flex gap-5 p-5 rounded-xl container items-end justify-between">
             <div>
-              <h2 className="text-white text-4xl font-bold"> اتصال بنا</h2>
+              <h2 className="text-white text-4xl font-bold">  الشروط والأحكام </h2>
             </div>
             <div className="flex gap-5 bg-white p-3 rounded-xl">
               <a href="/">
@@ -22,7 +22,7 @@ const Page = () => {
                 />
               </a>
               <p>{`>`}</p>
-              <p className="text-smText font-bold">اتصال بنا</p>
+              <p className="text-smText font-bold"> الشروط والأحكام </p>
             </div>
           </div>
         </div>
