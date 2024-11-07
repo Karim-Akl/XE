@@ -11,7 +11,7 @@ main {
     background-size: 100%; /* الحجم الأصلي للصورة */
   }
   100% {
-    background-size: 110%; /* الحجم بعد الزوم */
+    background-size: 102%; /* الحجم بعد الزوم */
   }}
 .main-class {
   background-image: url(../../../public/assets/images/bk03.webp);
@@ -306,15 +306,13 @@ main {
   }
 }
 @media only screen and (max-width: 1067px) {
-  main {
-    height: 70vh;
+  main{
+    height: 52vh !important;
   }
-
   .main-class,
   .slider-2,
-  .slider-3,
-  main {
-    height: 70vh !important;
+  .slider-3{
+    height: 50vh !important;
     overflow: hidden;
     /* height: 100%; */
     width: 100%;

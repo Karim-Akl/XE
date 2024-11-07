@@ -41,56 +41,60 @@ export default function MoyasarPaymentForm() {
         currency: "SAR",
         description: `طلب خدمة #${bookingId}`,
         publishable_api_key: "pk_test_cGYZbwKBYQup1MQagNvea8uAg51Am9Zez2ZUwXGa",
-        callback_url: "http://localhost:3001/", // الصفحة الرئيسية
         methods: ["creditcard"],
+        callback_url: "http://localhost:3001/request-service", // Replace with your callback URL
+
+        // Callback called when payment is successfully completed
+        onCompleted: async (payment) => {
+          const paymentId = payment.id;
+          const paymentStatus =
+            payment.status === "paid" ? "success" : "failed";
+          const receivedAmount = payment.amount / 100;
+
+          try {
+            const response = await fetch(
+              "https://xealkhalej-backend.alwajez.com/api/user/add-transaction",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  booking_id: bookingId,
+                  amount: receivedAmount,
+                  payment_status: paymentStatus,
+                  payment_method: "mada",
+                  transaction_id: paymentId,
+                }),
+              }
+            );
+
+            const responseData = await response.json();
+            if (response.ok) {
+              console.log("Transaction successfully recorded");
+
+              // تخزين بيانات الدفع في localStorage
+              localStorage.setItem(
+                "paymentDetails",
+                JSON.stringify({
+                  paymentId,
+                  status: paymentStatus,
+                  amount: receivedAmount,
+                  method: "mada",
+                })
+              );
+            } else {
+              console.error("Failed to record transaction", responseData);
+            }
+          } catch (error) {
+            console.error("Error recording transaction:", error);
+          }
+        },
+
+        onFailed: (error) => {
+          console.error("Payment failed:", error);
+        },
       });
     }
   }, [amount, bookingId]);
-
-  // متابعة إتمام عملية الدفع
-  useEffect(() => {
-    const handlePaymentResponse = async () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const paymentId = urlParams.get("id");
-      const status = urlParams.get("status");
-      const receivedAmount = urlParams.get("amount");
-      const message = urlParams.get("message");
-
-      // تحديد حالة الدفع بناءً على قيمة message
-      const paymentStatus = message === "APPROVED" ? "success" : "failed";
-
-      if (status === "paid" && paymentId && bookingId) {
-        try {
-          const response = await fetch(
-            "https://xealkhalej-backend.alwajez.com/api/user/add-transaction",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                booking_id: bookingId,
-                amount: receivedAmount / 100, // تحويل المبلغ إلى الريالات
-                payment_status: paymentStatus,
-                payment_method: "mada",
-                transaction_id: paymentId,
-              }),
-            }
-          );
-
-          if (response.ok) {
-            console.log("Transaction successfully recorded");
-          } else {
-            console.error("Failed to record transaction");
-          }
-        } catch (error) {
-          console.error("Error recording transaction:", error);
-        }
-      }
-    };
-
-    handlePaymentResponse();
-  }, [bookingId]);
 
   return <div className="mysr-form"></div>;
 }

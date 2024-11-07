@@ -18,6 +18,7 @@ const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [options, setOptions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showServices, setShowServices] = useState(false); // لحالة إظهار الخدمات
   useEffect(() => {
     fetch("https://xealkhalej-backend.alwajez.com/api/user/services")
       .then((response) => {
@@ -44,7 +45,7 @@ const Header = () => {
           >
             <div className="flex items-top justify-between gap-3">
               <p className="text-smText">لديك استفسار؟ راسلنا الان</p>
-              <p className="flex items-top gap-2 text-white hover:text-text space-x-3">
+              <p className="flex items-top gap-2 hover:text-text space-x-3 text-text2">
                 <span>
                   <img
                     src="/assets/images/WhatsApp.svg_ copy.webp"
@@ -90,7 +91,7 @@ const Header = () => {
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-xl text-smText">اتصل بنا: </p>
-                  <p className="font-bold md:text-lg xl:text-lg">920028066</p>
+                  <p className="font-bold md:text-lg xl:text-lg text-textCont">920028066</p>
                 </div>
               </div>
               <div className="flex gap-5 hover:text-text">
@@ -102,14 +103,14 @@ const Header = () => {
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-xl text-smText">العنوان:</p>
-                  <p className="font-bold md:text-lg xl:text-lg">
+                  <p className="font-bold md:text-lg xl:text-lg text-textCont">
                     طريق أبو بكر الصديق، حي الإسكان، بريدة
                   </p>
                 </div>
               </div>
             </div>
             <div className="devi"></div>
-            <div className="lin-2 flex justify-evenly">
+            <div className="lin-2 flex justify-around  text-center justify-center items-center">
               <ul className="flex gap-5">
                 <li className="text-textCont hover:text-text">
                   <Link href="/">الصفحة الرئيسية</Link>
@@ -125,7 +126,7 @@ const Header = () => {
                     </span>
                   </Link>
 
-                  <ul className="dropdown rounded-xl ">
+                  <ul className="dropdown rounded-xl  text-right">
                     {isLoading ? (
                       <div>
                         <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2">
@@ -159,22 +160,22 @@ const Header = () => {
                   <Link href="/contact">تواصل معنا</Link>
                 </li>
               </ul>
-              <div className="flex gap-5">
+              <div className="flex gap-5 text-center justify-center items-center">
                 <a
                   href="https://wa.me/920028066"
-                  className="icon-social hover-icon rotate-on-hover"
+                  className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
                 >
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
                 <a
                   href="https://www.instagram.com"
-                  className="icon-social hover-icon rotate-on-hover"
+                  className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
                 <a
                   href="https://twitter.com"
-                  className="icon-social hover-icon rotate-on-hover"
+                  className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
                 >
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
@@ -230,13 +231,43 @@ const Header = () => {
                 </li>
                 <li onClick={() => setShowModal(false)}>
                   <Link href="/services" className="lk">
-                    خدماتنا ^
+                    خدماتنا 
                   </Link>
                 </li>
-                <li onClick={() => setShowModal(false)}>
-                  <Link href="/request-service" className="lk">
-                    طلب الخدمة
+                <li
+                  className="text-textCont hover:text-text relative ul-class"
+                  onClick={() => setShowServices(!showServices)} // التحكم في فتح وإغلاق القائمة المنبثقة
+                >
+                  <Link href="#" className="ul-class font-bold">
+                     كل خدماتنا
+                    <span className="mr-1">
+                      <FontAwesomeIcon icon={faChevronDown} />
+                    </span>
                   </Link>
+
+                  {/* القائمة المنبثقة التي تحتوي على الخدمات */}
+                  {showServices && (
+                    <ul className="dropdown rounded-xl">
+                      {isLoading ? (
+                        <div>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
+                          <li className="animate-pulse bg-gray-300 w-52 h-6 rounded-full mb-2"> </li>
+                        </div>
+                      ) : (
+                        options.map((option) => (
+                          <li
+                            className="p-2 text-right m-auto hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text overflow-scroll"
+                            key={option.id}
+                          >
+                            <Link href={`/services/${option.id}`} className="">
+                              {option.title || ""}
+                            </Link>
+                          </li>
+                        ))
+                      )}
+                    </ul>
+                  )}
                 </li>
                 <li onClick={() => setShowModal(false)}>
                   <Link href="/contact" className="lk">

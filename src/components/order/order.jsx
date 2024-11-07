@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import _orderLoding from "./_orderLoding";
+import _OrderSummary from "./_OrderSummary";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
@@ -14,6 +15,7 @@ function Order() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [price, setPrice] = useState("");
+  const [isModalOpen, setisModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     client_name: "",
     client_email: "",
@@ -36,6 +38,7 @@ function Order() {
         }));
         setOptions(formattedOptions);
         setIsLoading(false);
+        localStorage.setItem("label", formattedOptions[0].label);
       })
       .catch((error) => {
         console.error("Error fetching services:", error);
@@ -64,8 +67,29 @@ function Order() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // التحقق من صحة البيانات
     if (!selectedService) {
-      alert("Please select a service.");
+      toast.error("يجب أختيار خدمة");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.client_name || formData.client_name.trim().length < 3) {
+      toast.error("يرجى إدخال اسم صالح");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.client_email)) {
+      toast.error("يرجى إدخال بريد إلكتروني صالح");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const phoneRegex = /^[0-9]{10}$/; // تأكد من أن الجوال مكون من 10 أرقام فقط
+    if (!phoneRegex.test(formData.client_phone)) {
+      toast.error("يرجى إدخال رقم هاتف صالح");
       setIsSubmitting(false);
       return;
     }
@@ -104,39 +128,21 @@ function Order() {
       toast.success("تم حجز الخدمة بنجاح! سنتواصل معكم قريباً.");
 
       const booking_id = result.booking.id;
+      console.log("Booking ID:", booking_id);
 
-      if (paymentMethod === "cash") {
-        const transactionData = {
-          booking_id,
-          amount: price,
-          payment_status: "success",
-          payment_method: "cash",
-          transaction_id: `CASH${Math.floor(Math.random() * 1000000)}`,
-        };
-
-        console.log("Sending transaction data:", transactionData);
-
-        const transactionResponse = await fetch(
-          "https://xealkhalej-backend.alwajez.com/api/user/add-transaction",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(transactionData),
-          }
-        );
-
-        console.log("Transaction response status:", transactionResponse.status);
-        if (!transactionResponse.ok)
-          throw new Error("Failed to submit transaction.");
-
-        toast.success("تمت إضافة المعاملة النقدية بنجاح.");
-      } else if (paymentMethod === "mada" && router) {
+      if (paymentMethod === "mada" && router) {
         localStorage.setItem("booking_id", booking_id);
         router.push("/PaymentPage");
       }
 
+      localStorage.setItem("client_name", formData.client_name);
+      localStorage.setItem("client_email", formData.client_email);
+      localStorage.setItem("client_phone", formData.client_phone);
+      localStorage.setItem("notes", formData.notes);
+      localStorage.setItem("selectedService", formData.selected_service);
+      localStorage.setItem("price", price);
+
+      setisModalOpen(true);
       setFormData({
         client_name: "",
         client_email: "",
@@ -149,9 +155,14 @@ function Order() {
     } catch (error) {
       console.error("Error submitting booking or transaction:", error);
       toast.error("حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.");
+    } finally {
+      // التأكد من إعادة حالة الإرسال
+      setIsSubmitting(false);
     }
+  };
 
-    setIsSubmitting(false);
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
@@ -228,13 +239,24 @@ function Order() {
                         styles={{
                           control: (base) => ({
                             ...base,
-                            fontSize: "0.875rem",
+                            fontSize: "1rem",
                             width: "100%",
+                            backgroundColor: "hsl(206.67deg 33.33% 94.71%)",
+                            borderColor: "hsl(206.67deg 33.33% 94.71%)",
+                            padding: "0px 8px",
+                            borderRadius: "8px", // لضبط الحواف بشكل أفضل
+                            ":hover": {
+                              borderColor: "hsl(206.67deg 33.33% 94.71%)",
+                            },
                           }),
                           option: (base) => ({
                             ...base,
-                            fontSize: "0.75rem",
-                            padding: "4px 8px",
+                            fontSize: "1rem",
+                            padding: "8px 12px",
+                          }),
+                          dropdownIndicator: (base) => ({
+                            ...base,
+                            padding: "5px", // ضبط المساحة حول المؤشر
                           }),
                         }}
                         onChange={handleServiceChange}
@@ -314,6 +336,27 @@ function Order() {
           </div>
         </div>
       </section>
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>تم إرسال الطلب بنجاح</h2>
+            <p>تفاصيل الطلب:</p>
+            <ul>
+              <li>الاسم: {localStorage.getItem("client_name")}</li>
+              <li>البريد الإلكتروني: {localStorage.getItem("client_email")}</li>
+              <li>الهاتف: {localStorage.getItem("client_phone")}</li>
+              <li>الخدمة: {localStorage.getItem("label")}</li>
+              <li>السعر: {localStorage.getItem("price")} SAR</li>
+              <li>
+                طريقة الدفع: {paymentMethod === "cash" ? "نقداً" : "فيزا"}
+              </li>
+            </ul>
+            <button onClick={handlePrint}>طباعة</button>
+            <button onClick={() => setisModalOpen(false)}>إغلاق</button>
+          </div>
+        </div>
+      )}
+      {/* <_OrderSummary /> */}
     </div>
   );
 }
