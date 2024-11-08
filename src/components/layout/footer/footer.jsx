@@ -1,14 +1,40 @@
 "use client";
+import { useScrollState } from "../.../../../../app/ScrollContext"; 
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeadset,
   faGlobe,
+  faArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./footer.css";
 const Footer = () => {
+  const [showButton, setShowButton] = useState(false);
+  // تابع حالة التمرير
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true); // عرض الزر بعد التمرير 300px
+      } else {
+        setShowButton(false); // إخفاء الزر عند العودة للأعلى
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // دالة العودة للأعلى
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="w-full h-auto relative bottom-0 mt-32">
+    <footer className="w-full h-auto relative bottom-0 mt-32 ">
       <div className="footer-class relative h-auto flex items-center justify-center text-center w-full flex-col align-center gap-4">
         <div
           style={{ transform: "translateY(-35%) " }}
@@ -108,8 +134,16 @@ const Footer = () => {
           تصميم وتطوير كريم عقل للتسويق الإلكتروني
         </h2>
       </div>
+      {showButton && (
+          <button
+            onClick={scrollToTop}
+            className="absolute  w-6 h-6 transform  mb-0   bottom-24 left-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-iconHover transition"
+          >
+            <FontAwesomeIcon icon={faArrowUp} className="w-6 h-6" />
+          </button>
+        )}
     </footer>
   );
 };
 
-export default Footer;
+export default Footer ;

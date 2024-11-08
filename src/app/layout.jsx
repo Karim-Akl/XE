@@ -1,5 +1,4 @@
 // src/app/layout.js
-
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
 import "../../globals.css";
@@ -10,6 +9,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="ar">
       <head>
@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@400;700&family=Lalezar&display=swap"
           rel="stylesheet"
         />
-        {/* Moyasar Styles and Scripts */}
         <link
           rel="stylesheet"
           href="https://cdn.moyasar.com/mpf/1.14.0/moyasar.css"
@@ -32,9 +31,12 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body>
+        <div>
+
         <Header />
         {children}
         <Footer />
+        </div>
       </body>
     </html>
   );
