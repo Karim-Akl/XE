@@ -67,7 +67,7 @@ const Main = () => {
                     الكفاءة والثقة في
                     <span> اختيارك </span>
                   </p>
-                  <p className="text-lg text-gray-700 mb-6 text-class-3 animate__animated animate__fadeInLeft animate__delay-3s">
+                  <p className="text-lg text-gray-700 mb-6 text-class-3 animate__animated animate__fadeInLeft animate__delay-3s ">
                     معنا، تجد أفضل الجنسيات والكفاءات لتلبية احتياجات منزلك
                     بأمان وموثوقية
                   </p>
@@ -175,7 +175,7 @@ const Main = () => {
         <SwiperSlide>
           <div className="main-class slide-1">
             <div className="flex w-[100%]">
-              <div className="relative w-full m-auto flex flex-col justify-center items-center h-[500px] bg-cover bg-center md:translate-y-[0%] translate-y-[15%]">
+              <div className="relative w-full m-auto flex flex-col justify-center items-center h-[500px] bg-cover bg-center md:translate-y-[5%] translate-y-[5%]">
                 {/* شعار الشركة */}
                 <div className="md:w-80 w-40 animate__animated animate__fadeInDown animate__delay-1s">
                   <img
@@ -186,12 +186,12 @@ const Main = () => {
                 </div>
 
                 {/* العنوان الرئيسي */}
-                <h2 className="text-gray-700 text-lg md:text-2xl font-medium bg-secondary text-text px-8 py-3 translate-y-6 rounded-md inline-block mb-2 animate__animated animate__fadeInUp animate__delay-2s">
+                <h2 className=" text-lg md:text-2xl font-medium bg-secondary text-text px-8  md:py-4 py-1  translate-y-6 rounded-md inline-block mb-2 animate__animated animate__fadeInUp animate__delay-2s">
                   بكل راحة وبدون تعب
                 </h2>
 
                 {/* الوصف */}
-                <p className="text-gray-800 md:text-2xl font-semibold bg-background text-secondary px-4 md:py-8 py-4 rounded-md inline-block animate__animated animate__fadeInUp animate__delay-3s">
+                <p className=" md:text-2xl text-sm font-semibold bg-background text-secondary px-4 md:py-5 py-1 rounded-md inline-block animate__animated animate__fadeInUp animate__delay-3s">
                   استقدامك معنا مباشر ومبسط بدون أي تعقيدات
                 </p>
               </div>
