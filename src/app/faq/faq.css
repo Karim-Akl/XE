@@ -38,7 +38,7 @@
   justify-content: center;
   overflow-y: auto;
   margin: auto;
-  position: absolute;
+  position: relative;
   top: 0px !important;
   margin-top: 0px;
 

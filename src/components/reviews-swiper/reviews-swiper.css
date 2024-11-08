@@ -17,3 +17,92 @@
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
   display: flex;
 }
+
+/* reviews-swiper.css */
+
+/* Container styles */
+.reviews-swiper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Title styles */
+.reviews-swiper-container h2 {
+  color: #fbbf24; /* yellow-600 */
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold;
+  margin-bottom: 1.25rem; /* mb-5 */
+  padding-bottom: 0.5rem; /* pb-2 */
+  border-bottom: 4px solid #fbbf24; /* border-yellow-600 */
+}
+
+.reviews-swiper-container p {
+  color: #4b5563; /* gray-600 */
+  text-align: center;
+  margin-bottom: 2rem; /* mb-8 */
+  width: 50%; /* md:w-[50%] */
+}
+
+/* Swiper container styles */
+.reviews-swiper-slider {
+  width: 100%;
+}
+
+/* Individual review slide styles */
+.reviews-swiper-slide {
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  margin-bottom: 2.5rem; /* mb-10 */
+  box-sizing: border-box;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 36rem; /* max-w-xl */
+  height: 10rem; /* h-40 */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
+  position: relative;
+}
+
+/* Avatar image styles */
+.reviews-swiper-avatar {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e5e7eb; /* border-gray-200 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.reviews-swiper-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Review details text */
+.reviews-swiper-text {
+  text-align: right;
+}
+
+.reviews-swiper-text h3 {
+  color: #fbbf24; /* text-yellow-600 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+}
+
+.reviews-swiper-text p {
+  color: #6b7280; /* gray-500 */
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.reviews-swiper-text p:last-child {
+  color: #374151; /* gray-700 */
+}

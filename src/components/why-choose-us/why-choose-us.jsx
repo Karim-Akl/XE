@@ -2,17 +2,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import "./style.css";
+
 const WhyChooseUs = () => {
-  // State to hold the animated values
   const [progressValues, setProgressValues] = useState({
     customerSatisfaction: 0,
     recruitmentSuccess: 0,
     timeliness: 0,
     professionalism: 0,
   });
+
+  const progressRef = useRef(null); // مرجع لعنصر البروجريس
 
   useEffect(() => {
     const targets = {
@@ -31,13 +33,30 @@ const WhyChooseUs = () => {
         } else {
           clearInterval(interval);
         }
-      }, 20); // Adjust the speed of increment
+      }, 20);
     };
 
-    // Start incrementing for each progress bar
-    Object.entries(targets).forEach(([key, target]) => {
-      incrementProgress(key, target);
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            Object.entries(targets).forEach(([key, target]) => {
+              incrementProgress(key, target);
+            });
+            observer.disconnect(); // افصل الكاشف بعد بدء العد التزايدي
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (progressRef.current) {
+      observer.observe(progressRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -93,8 +112,7 @@ const WhyChooseUs = () => {
           />
         </div>
 
-        {/* Left Section */}
-        <div className="md:w-1/2">
+        <div className="md:w-1/2" ref={progressRef}>
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             لماذا <span className="text-yellow-600">تختارنا؟</span>
           </h2>
@@ -103,7 +121,6 @@ const WhyChooseUs = () => {
             تميزنا يأتي من التزامنا بتوفير تجربة استقدام استثنائية، تركز على
             الجودة، السرعة.
           </p>
-          {/* Progress Bars */}
           <div className="space-y-4 box-2">
             <ProgressBar
               label="رضا العملاء"
@@ -128,20 +145,19 @@ const WhyChooseUs = () => {
   );
 };
 
-// ProgressBar Component
 const ProgressBar = ({ label, value }) => {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex flex-col  font-medium w-full">
-        <span className="text-gray-800 font-medium text-xl">{label}</span>
-        <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+      <div className="flex flex-col font-medium w-full">
+        <span className="text-gray-800 font-medium text-xl items-center ">{label}</span>
+        <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden items-center">
           <div
             style={{ width: `${value}%` }}
             className="h-full bg-background"
           ></div>
         </div>
       </div>
-      <span className="bg-brown-600 text-white bg-textCont px-2 py-1 rounded-lg text-sm font-bold">
+      <span className="bg-brown-600 text-white bg-textCont px-2 py-1 rounded-lg text-sm font-bold translate-y-3 items-center">
         {value}%
       </span>{" "}
     </div>

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./reviews-swiper.css"
+import "./reviews-swiper.css";
 const ReviewsSwiper = () => {
   const reviews = [
     {
@@ -14,31 +14,25 @@ const ReviewsSwiper = () => {
       image: "/assets/images/icon-04.webp", // صورة رمزية Placeholder
     },
     {
-      name: "عبدالمحسن العتيبي",
-      position: "استخدام سائق خاص",
+      name: "أبو صالح",
+      position: "استقدام عاملة منزلية",
       feedback:
-        "من أفضل شركات الاستقدام، تعامل مميز وسرعة في الإجراءات. أنصح بها بشدة.",
+        "مكتب رائع يتميز بالكثير منها المواعيد مضبوطه والتعامل الاكثر من رائع وسهولة التواصل وسرعة الاستقدام والوضوح .. ثالث مرة أتعامل وإن شاءالله ماراح يكون الاخير انصح فيه ..",
       image: "/assets/images/icon-04.webp", // صورة رمزية Placeholder
     },
     {
       name: "عبدالمحسن العتيبي",
-      position: "استخدام سائق خاص",
+      position: "تأجير العمالة المنزلية",
       feedback:
         "من أفضل شركات الاستقدام، تعامل مميز وسرعة في الإجراءات. أنصح بها بشدة.",
       image: "/assets/images/icon-04.webp", // صورة رمزية Placeholder
     },
+    ,
     {
-      name: "عبدالمحسن العتيبي",
-      position: "استخدام سائق خاص",
+      name: "أبو صالح",
+      position: "استقدام عاملة منزلية",
       feedback:
-        "من أفضل شركات الاستقدام، تعامل مميز وسرعة في الإجراءات. أنصح بها بشدة.",
-      image: "/assets/images/icon-04.webp", // صورة رمزية Placeholder
-    },
-    {
-      name: "عبدالمحسن العتيبي",
-      position: "استخدام سائق خاص",
-      feedback:
-        "من أفضل شركات الاستقدام، تعامل مميز وسرعة في الإجراءات. أنصح بها بشدة.",
+        "مكتب رائع يتميز بالكثير منها المواعيد مضبوطه والتعامل الاكثر من رائع وسهولة التواصل وسرعة الاستقدام والوضوح .. ثالث مرة أتعامل وإن شاءالله ماراح يكون الاخير انصح فيه ..",
       image: "/assets/images/icon-04.webp", // صورة رمزية Placeholder
     },
     // يمكنك إضافة المزيد من التقييمات هنا إذا أردت

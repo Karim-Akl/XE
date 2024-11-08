@@ -12,7 +12,8 @@ import {
   faWhatsapp,
   faInstagram,
   faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+  faSnapchatGhost, // Add Snapchat icon
+} from "@fortawesome/free-brands-svg-icons"; // From free-brands-svg-icons
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -164,19 +165,21 @@ const Header = () => {
               </ul>
               <div className="flex gap-5 text-center justify-center items-center">
                 <a
-                  href="https://wa.me/920028066"
-                  className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
+                  href="https://www.snapchat.com/add/xea3300"
+                  className="icon-social  hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
+
                 >
-                  <FontAwesomeIcon icon={faWhatsapp} />
+                  <FontAwesomeIcon icon={faSnapchatGhost} />
                 </a>
                 <a
                   href="https://www.instagram.com"
                   className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
+
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/xeAlkhallj"
                   className="icon-social hover-icon rotate-90-hover hover:rounded-full h-6 w-6 text-center justify-center items-center flex "
                 >
                   <FontAwesomeIcon icon={faTwitter} />
@@ -240,8 +243,8 @@ const Header = () => {
                   className="text-textCont hover:text-text relative ul-class"
                   onClick={() => setShowServices(!showServices)} // التحكم في فتح وإغلاق القائمة المنبثقة
                 >
-                  <Link href="#" className="ul-class font-bold">
-                    كل خدماتنا
+                  <Link href="#" className="ul-class">
+                    <span className="text-[13px] font-bold">كل خدماتنا</span>
                     <span className="mr-1">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </span>
@@ -265,10 +268,10 @@ const Header = () => {
                       ) : (
                         options.map((option) => (
                           <li
-                            className="p-2 text-right m-auto hover:bg-gray-100 hover:mr-2 hover:font-bold text-black hover:text-text overflow-scroll"
+                            className="text-right p-2 hover:text-text hover:text-white"
                             key={option.id}
                           >
-                            <Link href={`/services/${option.id}`} className="">
+                            <Link href={`/services/${option.id}`} onClick={() => setShowModal(false)} className=" hover:text-text">
                               {option.title || ""}
                             </Link>
                           </li>

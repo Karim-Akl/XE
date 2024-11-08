@@ -13,6 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar">
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@400;700&family=Lalezar&display=swap"
+          rel="stylesheet"
+        />
         {/* Moyasar Styles and Scripts */}
         <link
           rel="stylesheet"

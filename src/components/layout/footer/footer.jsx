@@ -1,12 +1,18 @@
 "use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeadset,
+  faGlobe,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="w-full h-auto relative bottom-0 mt-24">
+    <footer className="w-full h-auto relative bottom-0 mt-32">
       <div className="footer-class relative h-auto flex items-center justify-center text-center w-full flex-col align-center gap-4">
         <div
-          style={{ transform: "translateY(-35%)" }} 
-          className="scale top-0 flex z-20 rounded-xl overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-1 bg-background md:flex-row md:w-[70%]  w-[85%] "
+          style={{ transform: "translateY(-35%) " }}
+          className="xbbb hover:scale-125 top-0 flex z-20 rounded-lg overflow-hidden absolute flex-col items-center justify-evenly h-64 align-center gap-1 bg-background md:flex-row md:w-[70%]  w-[75%] "
         >
           <div className="absolute right-0 md:relative md:w-1/3  w-full opacity-0.5 z-0 h-[100%] img-class-footer">
             <img
@@ -20,7 +26,7 @@ const Footer = () => {
             <h2 className="textCont md:text-3xl text-xl font-bold text-textCont">
               هل لديك سؤال او استفسار؟
             </h2>
-            <p className=" md:text-xl  text-white">
+            <p className=" md:text-xl  text-white md:text-right mr-3">
               تواصل مع خدمة العملاء الان
             </p>
           </div>
@@ -64,31 +70,38 @@ const Footer = () => {
       </div>
 
       <div className="footer-text flex flex-col items-center justify-around text-center w-full align-center gap-4 bg-secondary h-30 md:flex-row py-3">
-        <div className="flex gap-2 p-2">
-          <img
-            src="/assets/images/mail.png"
-            alt=""
-            style={{ width: "30px", height: "auto" }}
+        <div className="flex gap-2 p-2 items-center ">
+          <FontAwesomeIcon
+            icon={faHeadset}
+            className="w-8 h-8 text-white text-center p-2 rounded-lg transition duration-200 ease-in-out group-hover:bg-iconHover group-hover:scale-110"
           />
-          <h2 className="text-white md:text-2xl text-xl">
-            <span className="text-text text-xl"> الهاتف:</span> 920028066
+          <h2 className="text-white md:text-xl text-lg  cursor-pointer group ">
+            <a href="tel:920028066">
+            <span className="text-text text-xl  "> الهاتف:</span>
+            <span className="md:text-xl text-lg mr-1 group-hover:text-text2">920028066</span>
+            </a>
           </h2>
+          
         </div>
-        <div className="flex gap-2 p-2">
-          <img
-            src="/assets/images/mail.png"
-            alt=""
-            style={{ width: "30px", height: "auto" }}
+        <div className="flex gap-2 p-2 text-center items-center">
+          <FontAwesomeIcon
+            icon={faGlobe}
+            faHeadset
+            className="w-8 h-8 text-white text-center p-2 rounded-lg transition duration-200 ease-in-out group-hover:bg-iconHover group-hover:scale-110"
           />
-          <h2 className="text-white md:text-2xl text-xl">
-            <span className="text-text text-xl">موقعنا:</span>
-            <span>طريق أبو بكر الصديق، حي الإسكان، بريدة</span>
+          <h2 className="text-white md:text-2xl text-xl cursor-pointer group">
+            <a href="https://www.google.com/maps?ll=26.393879,43.952109&z=15&t=m&hl=ar&gl=SA&mapclient=embed&cid=10518171101285590689">
+              <span className="text-text text-xl">موقعنا:</span>
+              <span className="md:text-xl text-lg mr-1 group-hover:text-text2">
+                طريق أبو بكر الصديق، حي الإسكان، بريدة
+              </span>
+            </a>
           </h2>
         </div>
       </div>
 
       <div className="footer-text flex flex-col items-center justify-center text-center w-full m-auto align-center gap-4 bg-primary h-30 py-3">
-        <h2 className="text-text text-xl">
+        <h2 className="text-text md:text-xl text-lg">
           © جميع الحقوق محفوظة لشركة إكسي الخليج للإستقدام ٢٠٢٤
         </h2>
         <h2 className="text-white text-xs">
